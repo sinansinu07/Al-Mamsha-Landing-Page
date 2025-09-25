@@ -1,0 +1,270 @@
+.footer {
+    position: relative; // Needed for absolute positioning of .wecan_stroke_text
+    overflow: hidden; // Ensures nothing spills out from footer padding issues
+    bottom: unset;
+    padding-top: 50px;
+    // padding-bottom: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background: black;
+    color: white;
+    // border: 1px solid white;
+
+    @media (max-width: 1310px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    @media (max-width: 768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .footer_row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+        position: relative; // Ensure this content is above the absolute text
+        margin-bottom: 20px;
+
+        @media (max-width: 1310px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            justify-content: center;
+        }
+
+        @media (max-width: 950px) {
+            // margin-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .footer_col {
+            padding: 0;
+            flex: 1;
+
+            &:nth-child(1) {
+                flex-basis: 25%;
+                max-width: 25%;
+                @media (max-width: 1310px) {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
+            }
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+                flex-basis: 22%;
+                max-width: 22%;
+                 @media (max-width: 1310px) {
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
+            }
+
+            .head {
+                font-size: 25px;
+                // text-transform: uppercase;
+                margin-bottom: 15px;
+                font-weight: bold;
+                color: white;
+            }
+
+            &.contact_us_col {
+                .company_logo {
+                    width: 200px;
+                    height: auto;
+                }
+
+                .contact_details_group {
+                    margin-top: 20px;
+                    
+                    p {
+                        font-size: 14px;
+                        line-height: 1.5;
+                        margin-bottom: 5px;
+                        color: #ccc;
+
+                        a {
+                            color: #ccc;
+                            text-decoration: none;
+                            &:hover {
+                                color: #259FBA;
+                            }
+                        }
+                    }
+                }
+                // .social_links_small styling if you uncommented them in JSX
+            }
+
+            ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    list-style: none;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    color: #ccc;
+
+                    a {
+                        color: #ccc;
+                        text-decoration: none;
+                        transition: color 0.3s ease;
+                        &:hover {
+                            color: #259FBA;
+                        }
+
+                        &.active {
+                            color: #259FBA;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // New styles for the "WECAN" stroke text
+    .wecan_stroke_text {
+        position: absolute; // Position absolutely within the footer
+        bottom: 40px; // Adjust this value to control vertical position above the copyright
+        left: 50%; // Center horizontally
+        transform: translateX(-50%); // Fine-tune horizontal centering
+        font-size: 120px; // Large font size for the effect
+        font-weight: bold;
+        white-space: nowrap; // Prevent text from wrapping
+        opacity: 0.1; // Make it semi-transparent as seen in the screenshot
+        pointer-events: none; // Ensures text doesn't block clicks on content behind it
+        user-select: none; // Prevent text selection
+        z-index: 1; // Ensures it's behind other footer content
+
+        img {
+            // transform: rotate(270deg);
+            width: 1200px;
+            height: 100%;
+        }
+
+        @media (max-width: 1700px) {
+            bottom: 45px;
+            img {
+                // transform: rotate(270deg);
+                width: 900px;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 1450px) {
+            img {
+                // transform: rotate(270deg);
+                width: 800px;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 1310px) {
+            margin-bottom: 0px;
+            bottom: 350px;
+            left: auto;
+            right: -250px;
+            transform: rotate(-90deg);
+            font-size: 90px;
+
+            img {
+                // transform: rotate(270deg);
+                width: 600px;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 950px) {
+            bottom: 320px;
+            left: auto;
+            right: -210px;
+            transform: rotate(-90deg);
+            font-size: 90px;
+
+            img {
+                // transform: rotate(270deg);
+                width: 500px;
+                height: 100%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            position: relative;
+            margin-bottom: 0px;
+            bottom: 0px;
+            display: flex;
+            justify-content: center;
+            right: auto;
+            transform: rotate(0deg);
+
+            img {
+                // transform: rotate(270deg);
+                width: 400px;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            img {
+                // transform: rotate(270deg);
+                width: 300px;
+                height: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            img {
+                // transform: rotate(270deg);
+                width: 250px;
+                height: 100%;
+            }
+        }
+    }
+
+    // Styles for the very bottom section (Privacy Policy, Terms, Copyright)
+    .bottom_footer {
+        background: black;        
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0px 50px 0px;
+        // margin-top: 40px;
+        position: relative; // Ensure it stays above the absolute text
+        z-index: 1; // Make sure copyright text is above the large "WECAN" text
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            text-align: center;
+            .left_section {
+                margin-bottom: 10px;
+            }
+        }
+
+        .left_section {
+            display: flex;
+            align-items: center;
+            color: #ccc;
+
+            p {
+                margin: 0;
+            }
+
+            .separator {
+                margin: 0 10px;
+                color: #ccc;
+            }
+        }
+
+        .right_section {
+            color: #ccc;
+        }
+    }
+}

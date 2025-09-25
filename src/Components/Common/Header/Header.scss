@@ -1,0 +1,785 @@
+.navbar {
+    position: fixed;
+    top: 0; /* Always stays at 15px */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding: 5px 100px;
+    height: 70px;
+    transition: all 0.5s ease;
+    background: transparent;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -15px;  /* fills the top 15px gap visually */
+        left: 0;
+        right: 0;
+        height: 15px;
+        background: transparent; /* or same bg as .navbar.bg-black if needed */
+        transition: background 0.5s ease;
+  }
+
+    .logo-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        z-index: 10001;
+        overflow: hidden;
+        width: 130px;
+        height: 100%;
+       
+
+        .menu-icon-close {
+            display: none;
+        }
+
+        .close-menu {
+            display: none;
+        }
+
+        .logo {
+            // margin-top: 15px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .nav-links-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .mobile-menu-header {
+            display: none;
+        }
+
+        .menu-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            // padding: 0px 30px;
+
+            .menu-items {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                letter-spacing: 1px;
+                text-decoration: none;
+                font-size: 14px;
+                // font-weight: 700;
+                text-transform: uppercase;
+                cursor: pointer;
+                color: white;
+                font-weight: 600;
+
+                a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-weight: 600;
+                }
+
+                svg {
+                    font-size: 16px;
+                    color: #259FBA;
+                    transition: .5s;
+                }
+            }
+
+            .menu-items:hover a {
+                color: #259FBA;
+                transition: .5s;
+                font-weight: bold;
+            }
+
+            .menu-items:hover svg {
+                transform: rotate(180deg);
+                transition: .5s;
+            }
+
+            a:hover {
+                color: #259FBA;
+                transition: .5s;
+            }
+
+            a.active {
+                color: #259FBA;
+                transition: .5s;
+            }
+        }
+
+        .mobile-menu-footer {
+            display: none;
+        }
+    }
+
+    .btn-icon-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        z-index: 1003;
+    }
+
+    .btn-white-div {
+        z-index: 1003;
+    }
+
+    .btn-white {
+        width: 130px;
+        font-weight: normal;
+        z-index: 1003 !important;
+    }
+
+    .btn-white.phone {
+        .login-icon {
+            font-size: 20px;
+        }
+    }
+
+    .btn-white.login {
+        height: 40px;
+        padding: 10px 15px;
+        width: 100px;
+
+        .login-icon {
+            font-size: 20px;
+        }
+    }
+
+    .menu-icon, .menu-icon-close {
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+        z-index: 1001;
+    }
+}
+
+.whatsapp-div {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    background: transparent;
+
+    img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
+// .navbar.bg-black {
+//     background: black;
+//     // top: 0;
+//     padding-top: 18px;  /* simulate top spacing visually */
+//     height: 85px;
+//     transition: all 0.5s ease;
+// }
+
+.navbar.bg-black {
+  background: black;
+
+  &::before {
+    background: black;
+  }
+}
+
+.navbar.sticky {
+    background: black;
+
+    &::before {
+      background: black;
+    }
+    // background: black;
+    // max-width: 1200px;
+    // padding: 5px 50px;
+    // color: white;
+    // background: rgba(0, 0, 0, 0.5);
+    // backdrop-filter: blur(30px);
+    // -webkit-backdrop-filter: blur(30px);
+    // box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37);
+    // border: 2px solid rgba(255, 255, 255, 0.18);
+    // border-radius: 100px;
+    // transition: all 0.5s ease;
+
+    // .nav-links-div ul li, .nav-links-div ul li a, .nav-links-div .login-icon {
+    //     color: white;
+    //     transition: .5s;
+    // }
+
+    // .nav-links-div ul li:hover, .nav-links-div ul li a:hover, .nav-links-div .login-icon:hover {
+    //     color: #259FBA;
+    //     transition: .5s;
+    // }
+
+    .btn-white.login, .btn-white.phone {
+        padding: 0px;
+        height: 40px;
+        width: 50px;
+        transition: all 0.5s ease;
+    }
+}
+
+.dropdownMenu {
+    position: fixed; /* instead of absolute */
+    top: 70px;
+    // top: 70px;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: black;
+    color: white;
+    height: 75vh;
+    width: 100vw;
+    padding: 50px 150px 0 150px;
+    gap: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // transition: all 0.5s ease;
+
+    .left {
+        width: 30%;
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .btn-white {
+            margin-top: 30px;
+            width: 150px;
+        }
+    }
+    .right {
+        width: 70%;
+
+        .service-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+
+            .service-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .title {
+                    font-size: 25px;
+                    text-transform: uppercase;
+                    transition: .5s;
+                    cursor: pointer;
+                }
+
+                .title:hover {
+                    color: #259FBA;
+                    transition: .5s;
+                }
+
+                .types-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .type {
+                        cursor: pointer;
+                        transition: .5s;
+                    }
+
+                    .type:hover {
+                        color: #259FBA;
+                        transition: .5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dropdownMenu {
+    transform-origin: top center;
+}
+
+.navbar.bg-black {
+  background: black;
+  color: white;
+  width: 101%;
+
+  &::before {
+    background: black;
+  }
+
+  // Keep existing sticky layout if it's also sticky
+  &.sticky {
+    top: 0;
+    padding-top: 0; // optional
+    height: auto;   // optional, if height fluctuates
+  }
+}
+
+@media (max-width: 1600px) {
+    .whatsapp-div {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .dropdownMenu {
+        height: 100vh;
+        overflow-y: auto;
+        padding-bottom: 100px;
+
+        .right {
+             overflow-y: auto;
+        }
+    }
+}
+
+@media (max-width: 1120px) {
+    .navbar {
+        top: 0;
+
+        .menu-icon {
+            display: block;
+        }
+
+        .nav-links-div {
+            position: relative;
+
+            .menu-bar {
+                position: fixed;
+                right: -2px;
+                top: 0;
+                bottom: 0;
+                padding-top: 100px;
+                padding-left: 50px;
+                width: 350px;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                background: black;
+                justify-content: flex-start;
+                align-items: flex-start;
+                transition: 0.5s;
+                z-index: 1001;
+                overflow-y: scroll;
+
+                .menu-items {
+                    svg {
+                        transform: rotate(90deg);
+
+                        &:hover {
+                            transform: rotate(-0deg);
+                        }
+                    }
+
+                    &:hover svg {
+                            transform: rotate(-0deg);
+                        }
+                }
+            }
+
+            .hide-menu-bar {
+                margin-right: -350px;
+                transition: 0.5s;
+            }
+
+            .mobile-menu-footer {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                // width: 100%;
+                color: white;
+                display: block;
+                justify-content: center;
+                align-items: center;
+
+                .social-head {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .social-links {
+                    // margin-top: 30px;
+                    display: flex;
+                    justify-content: left;
+                    text-align: left;
+                    align-items: center;
+                    padding: 10px 0 10px 0;
+                    margin-left: -15px;
+    
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        text-align: center;
+                        line-height: 40px;
+                        font-size: 40px;
+                        margin-left: 15px;
+                        cursor: pointer;
+                        z-index: 1;
+                        color: white;
+                        transition: .3s;
+                    }
+
+                    svg:hover {
+                        color: #259FBA;
+                        transform: scale(1.1);
+                        transition: .3s;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar.sticky {
+        // width: 100%;
+        border-radius: 0px;
+        top: 0;
+        background: black;
+
+    }
+
+    .navbar-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .dropdownMenu {
+        top: 65px;
+        left: auto;         // Remove the left position
+        right: 0;           // Move it to the right
+        justify-content: flex-end;
+        height: 100vh;
+        padding: 30px 50px 0 50px;
+        overflow-y: auto;
+        z-index: 999;
+
+        .left {
+            h1 {
+                font-size: 30px;
+            }
+        }
+        .right {
+            // width: 100%;
+            padding-bottom: 100px;
+            overflow-y: scroll;
+
+            .service-links {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 30px;
+
+                .service-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    .title {
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        transition: .5s;
+                        cursor: pointer;
+                    }
+
+                    .title:hover {
+                        color: #259FBA;
+                        transition: .5s;
+                    }
+
+                    .types-grid {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        .type {
+                            cursor: pointer;
+                            transition: .5s;
+                            font-size: 16px;
+                        }
+
+                        .type:hover {
+                            color: #259FBA;
+                            transition: .5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1020px) {
+    .dropdownMenu {
+        justify-content: center;
+        .left {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px 50px;
+    }
+
+    .dropdownMenu {
+        padding-left: 0px;
+        padding-right: 300px;
+        justify-content: center;
+        width: 100%;
+
+        .left {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        .btn-white.login, .btn-white.phone {
+            padding: 0px;
+            height: 40px;
+            width: 50px;
+            transition: all 0.5s ease;
+        }
+    }
+    .whatsapp-div {
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        .logo-div {
+            z-index: 10001;
+
+            
+        }
+        .nav-links-div {
+            .menu-bar {
+                // padding-left: 100px;
+
+                .menu-items {
+                    width: 102%;
+                    // position: relative;
+                    justify-content: space-between;
+                    padding-right: 50px;
+                    align-items: center;
+
+                    svg {
+                        transform: rotate(270deg);
+                        font-size: 20px;
+
+                        &:hover {
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdownMenu {
+        position: fixed;
+        right: 0;
+        top: 70px;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 0px;
+        margin-right: 0px;
+        width: 350px;
+        // height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: black;
+        color: white;
+        justify-content: flex-start;
+        z-index: 1000;
+        overflow-y: scroll;
+
+        .right {
+            .back-btn {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                font-size: 20px;
+                margin-bottom: 30px;
+                cursor: pointer;
+                transition: 0.5s;
+
+                svg {
+                    font-size: 20px;
+                }
+
+                &:hover {
+                    color: #259FBA;
+                    transition: 0.5s;
+            }
+            }
+
+            .service-links {
+                .service-grid {
+                    .title {
+                        font-size: 16px;
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+
+    .hide-dropdownMenu {
+        margin-right: -350px;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        .logo-div {
+            width: 100px;
+        }
+
+        .btn-white {
+            width: 120px;
+            font-size: 12px;
+        }
+
+        .menu-icon, .menu-icon-close {
+            font-size: 23px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        .nav-links-div {
+            .menu-bar {
+                width: 101%;
+                // height: 100%;
+            }
+
+            .hide-menu-bar {
+                margin-right: -100%;
+            }
+        }
+    }
+
+    .dropdownMenu {
+        width: 100%;
+        padding-left: 50px;
+    }
+
+    .hide-dropdownMenu {
+        margin-right: -100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 5px 30px;
+        .logo-div {
+            width: 100px;
+        }
+
+        .btn-white {
+            width: 120px;
+            font-size: 12px;
+        }
+
+        .menu-icon, .menu-icon-close {
+            font-size: 23px;
+        }
+    }
+}
+
+
+
+// .dropdownMenu.bg-white {
+//     position: absolute;
+//     top: 70px;
+//     left: 0;
+//     z-index: 1000;
+//     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+//     // border-radius: 20px;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     background: black;
+//     color: white;
+//     height: 70vh;
+//     width: 100vw;
+//     padding-top: 50px;
+//     padding-left: 150px;
+//     padding-right: 150px;
+//     gap: 100px;
+// }
+
+// .dropdownMenu.sticky {
+//     width: 1200px;
+//     border-radius: 20px;
+//     height: 90vh;
+//     padding-left: 50px;
+//     padding-right: 50px;
+
+//     .right {
+//         .service-links {
+//             .service {
+//                 display: flex;
+//                 flex-direction: column;
+//                 gap: 20px;
+
+//                 h1 {
+//                     font-size: 25px;
+//                     text-transform: uppercase;
+//                 }
+
+//                 .types-grid {
+//                     display: flex;
+//                     flex-direction: column;
+//                     gap: 10px;
+
+//                     .type {
+//                         cursor: pointer;
+//                         transition: .5s;
+//                     }
+
+//                     .type:hover {
+//                         color: #259FBA;
+//                         transition: .5s;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
