@@ -143,16 +143,6 @@
         }
     }
 
-    .btn-white.login {
-        height: 40px;
-        padding: 10px 15px;
-        width: 100px;
-
-        .login-icon {
-            font-size: 20px;
-        }
-    }
-
     .menu-icon, .menu-icon-close {
         color: white;
         font-size: 30px;
@@ -228,13 +218,6 @@
     //     color: #259FBA;
     //     transition: .5s;
     // }
-
-    .btn-white.login, .btn-white.phone {
-        padding: 0px;
-        height: 40px;
-        width: 50px;
-        transition: all 0.5s ease;
-    }
 }
 
 @media (max-width: 1600px) {

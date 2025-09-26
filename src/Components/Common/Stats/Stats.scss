@@ -107,6 +107,37 @@
     }
 }
 
+@media (max-width: 1050px) {
+    .stats-section {
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            .stats {
+                width: 200px;
+            }
+
+            // Center the last 2 items in the second row (4th and 5th items)
+            // .stats:nth-child(4),
+            // .stats:nth-child(5) {
+            //     grid-column: span 1;
+            // }
+
+            // // Center the 4th and 5th items by making them span the middle columns
+            // .stats:nth-child(4) {
+            //     grid-column: 1 / 2;
+            //     justify-self: end;
+            // }
+
+            // .stats:nth-child(5) {
+            //     grid-column: 2 / 3;
+            //     justify-self: start;
+            // }
+        }
+    }
+}
+
 @media (max-width: 800px) {
     .stats-section {
         .title {
@@ -145,11 +176,21 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
 
+            .stats {
+                width: 100%;
+            }
+
+            // Center the last item when it's alone in the row
+            .stats:nth-child(5) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                max-width: 250px;
+            }
         }
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .stats-section {
         .title {
             .main-title {
@@ -160,6 +201,31 @@
 
         .title-2 {
            display: none;
+        }
+
+        .stats-grid {
+            // display: flex;
+            // flex-wrap: wrap;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+
+            // Center the last item when it's alone in the row
+            .stats:nth-child(5) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                max-width: 200px;
+            }
+
+            .stats {
+                .number-div {
+                    // flex-direction: column;
+                    gap: 5px;
+
+                    .title1 {
+                        font-size: 14px;
+                    }
+                }
+            }
         }
     }
 }

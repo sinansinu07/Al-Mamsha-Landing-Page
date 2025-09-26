@@ -57,6 +57,67 @@
                 max-width: 800px;
             }
 
+            .key-points {
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .point {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 15px;
+                    padding: 15px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 12px;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.15);
+                        transform: translateX(5px);
+                    }
+
+                    .point-icon {
+                        flex-shrink: 0;
+                        width: 40px;
+                        height: 40px;
+                        background: linear-gradient(135deg, #00a8e8, #0099cc);
+                        border-radius: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-size: 18px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .point-text {
+                        flex: 1;
+
+                        h4 {
+                            color: white;
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin: 0 0 5px 0;
+                            line-height: 1.3;
+                        }
+
+                        p {
+                            color: rgba(255, 255, 255, 0.8);
+                            font-size: 14px;
+                            margin: 0;
+                            line-height: 1.4;
+                        }
+                    }
+                }
+            }
+
             .contact-details {
                 margin-top: 30px;
 
@@ -116,16 +177,18 @@
             border: 2px solid white;
             padding: 30px 50px;
             border-radius: 20px;
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
 
             .title {
                 font-size: 25px;
+                color: white;
             }
 
             .form-description {
                 font-size: 14px;
                 margin-bottom: 30px;
+                color: white;
             }
 
             .sameline {
@@ -187,7 +250,7 @@
                 }
             }
 
-            .btn-white {
+            .btn-blue {
                 width: 150px;
                 margin-left: auto;
                 margin-right: auto;
@@ -216,10 +279,10 @@
 
 @media (max-width: 1000px) {
     .contact-form-section {
-        padding: 50px 50px;
+        padding: 50px 20px;
         
         .contact-content {
-            padding: 0 50px;
+            padding: 0 30px;
         }   
     }
 }
@@ -234,6 +297,16 @@
                 width: 100%;
                 align-items: center;
                 text-align: center;
+
+                .key-points {
+                    .point {
+                        justify-content: center;
+                        text-align: left;
+                        width: 500px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
 
                 .contact-details {
                     .contact-div {
@@ -273,6 +346,11 @@
             gap: 30px;
             
             .contact-info {
+                .key-points {
+                    .point {
+                        width: 100%;
+                    }
+                }
                 .contact-details {
                     .contact-div {
                         flex-wrap: wrap;
@@ -294,7 +372,12 @@
             padding: 0 15px;
             
             .contact-form {
-                padding: 25px 15px;
+                padding: 25px 20px;
+                gap: 10px;
+
+                .form-description {
+                    margin-bottom: 10px;
+                }
             }
         }
     }
@@ -307,6 +390,32 @@
             gap: 20px;
             
             .contact-info {
+                .key-points {
+                    .point {
+                        padding: 12px;
+                        
+                        .point-icon {
+                            width: 35px;
+                            height: 35px;
+                            
+                            svg {
+                                width: 18px;
+                                height: 18px;
+                            }
+                        }
+                        
+                        .point-text {
+                            h4 {
+                                font-size: 15px;
+                            }
+                            
+                            p {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
+
                 .contact-details {
                     .contact-div {
                         .contact {

@@ -19,7 +19,7 @@
     .pricing-container {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 50px;
         position: relative;
         z-index: 2;
     }
@@ -36,7 +36,7 @@
             line-height: 1.2;
 
             .color {
-                background: linear-gradient(135deg, #00a8e8, #0099cc);
+                background: linear-gradient(135deg, #259FBA, #1a7a8f);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
@@ -73,14 +73,14 @@
         }
 
         &.popular {
-            border: 3px solid #00a8e8;
+            border: 3px solid #259FBA;
             transform: scale(1.05);
 
             .popular-badge {
                 position: absolute;
                 top: 20px;
                 right: 20px;
-                background: linear-gradient(135deg, #00a8e8, #0099cc);
+                background: linear-gradient(135deg, #259FBA, #1a7a8f);
                 color: white;
                 padding: 8px 16px;
                 border-radius: 20px;
@@ -185,7 +185,7 @@
                     .amount {
                         font-size: 32px;
                         font-weight: 700;
-                        color: #00a8e8;
+                        color: #259FBA;
                         display: block;
                         line-height: 1;
                     }
@@ -215,7 +215,7 @@
                         color: #666;
 
                         .check-icon {
-                            color: #00a8e8;
+                            color: #259FBA;
                             font-weight: bold;
                             margin-right: 10px;
                             font-size: 16px;
@@ -228,42 +228,8 @@
                 display: flex;
                 gap: 10px;
 
-                .inquiry-btn {
-                    flex: 1;
-                    height: 45px;
-                    background: linear-gradient(135deg, #00a8e8, #0099cc);
-                    color: white;
-                    border: none;
-                    border-radius: 10px;
-                    font-size: 14px;
-                    font-weight: 600;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        background: linear-gradient(135deg, #0099cc, #0088bb);
-                        transform: translateY(-2px);
-                        box-shadow: 0 5px 15px rgba(0, 168, 232, 0.3);
-                    }
-                }
-
-                .details-btn {
-                    flex: 1;
-                    height: 45px;
-                    background: transparent;
-                    color: #00a8e8;
-                    border: 2px solid #00a8e8;
-                    border-radius: 10px;
-                    font-size: 14px;
-                    font-weight: 600;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        background: #00a8e8;
-                        color: white;
-                        transform: translateY(-2px);
-                    }
+                .btn-blue-fill-2 {
+                    width: 100%;
                 }
             }
         }
@@ -286,7 +252,7 @@
         padding: 80px 0;
 
         .pricing-container {
-            padding: 0 15px;
+            padding: 0 30px;
         }
 
         .pricing-header {
@@ -349,6 +315,7 @@
                     .inquiry-btn,
                     .details-btn {
                         width: 100%;
+                        height: 40px;
                     }
                 }
             }
@@ -361,7 +328,7 @@
         padding: 40px 0;
 
         .pricing-container {
-            padding: 0 10px;
+            padding: 0 30px;
         }
 
         .pricing-header {
@@ -383,12 +350,39 @@
                 padding: 20px;
 
                 .villa-header {
+                    margin-bottom: 15px;
+                    padding-bottom: 10px;
+
                     .bedrooms {
                         font-size: 20px;
                     }
 
+                    .price {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        gap: 5px;
+
+                        .currency {
+                            font-size: 15px;
+                            margin-top: -2px;
+                        }
+
+                        .amount {
+                            font-size: 24px;
+                        }
+                    }
+
                     .price .amount {
                         font-size: 28px;
+                    }
+                }
+
+                .features {
+                    margin-bottom: 20px;
+
+                    .features-title {
+                        font-size: 14px;
                     }
                 }
             }

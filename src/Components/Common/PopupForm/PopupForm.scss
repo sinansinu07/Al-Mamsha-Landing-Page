@@ -1,4 +1,4 @@
-.modal-overlay {
+.popup-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
   backdrop-filter: blur(5px);
 }
 
-.modal-content {
+.popup-modal-content {
   position: relative;
   background: white;
   border-radius: 20px;
@@ -182,7 +182,7 @@
 
 
 @media (max-width: 768px) {
-  .modal-content {
+  .popup-modal-content {
     flex-direction: column;
     max-height: 95vh;
     margin: 10px;
@@ -214,11 +214,11 @@
 }
 
 @media (max-width: 500px) {
-  .modal-overlay {
+  .popup-modal-overlay {
     padding: 10px;
   }
 
-  .modal-content {
+  .popup-modal-content {
     margin: 0;
     max-height: 98vh;
   }

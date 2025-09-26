@@ -4,6 +4,10 @@ import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import "./ContactForm.scss";
 import bg from "../../../Assets/Banner/damac-banner-image.jpg";
+import icons1 from "../../../Assets/Icons/icon4.png";
+import icons2 from "../../../Assets/Icons/icon8.png";
+import icons3 from "../../../Assets/Icons/icon14.png";
+import icons4 from "../../../Assets/Icons/icon9.png";
 
 const PUBLIC_KEY = "_Brk5dkZd_0m-_xFM";
 const SERVICE_ID = "service_xad06ea";
@@ -90,8 +94,65 @@ export default function ContactForm() {
                     <div className="contact-info">
                         <h1 className="main-title">Over 20 Years of<br /> Redefining Luxury Living</h1>
                         <p className="description">
-                            At DAMAC Properties, we go beyond building homes — we create world-class lifestyles. Since 2002, we have delivered iconic residential, commercial, and leisure developments across Dubai and beyond, setting new benchmarks in premium real estate.
+                            DAMAC Island Phase 2 offers an unmatched lifestyle with world-class residences, vibrant activities, and premium amenities — redefining waterfront living in Dubai.
                         </p>
+
+                        <div className="key-points">
+                            <div className="point">
+                                <div className="point-icon">
+                                    {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                        <path d="M19 15L20.09 21.26L27 22L20.09 22.74L19 29L17.91 22.74L11 22L17.91 21.26L19 15Z" fill="currentColor"/>
+                                    </svg> */}
+                                    <img src={icons1} alt="" />
+                                </div>
+                                <div className="point-text">
+                                    <h4>Luxury Living</h4>
+                                    <p>Premium villas with world-class amenities</p>
+                                </div>
+                            </div>
+
+                            <div className="point">
+                                <div className="point-icon">
+                                    {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.17C15.24 5.06 14.32 5 13.4 5H10.6C9.68 5 8.76 5.06 7.83 5.17L10.5 2.5L9 1L3 7V9H21ZM5 13.18V11H19V13.18C19 13.18 18.5 14 17 14H7C5.5 14 5 13.18 5 13.18Z" fill="currentColor"/>
+                                    </svg> */}
+                                    <img src={icons2} alt="" />
+                                </div>
+                                <div className="point-text">
+                                    <h4>Water Activities</h4>
+                                    <p>Aqua parks, lagoons & water sports</p>
+                                </div>
+                            </div>
+
+                            <div className="point">
+                                <div className="point-icon">
+                                    {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.5 12C17.5 15.04 15.04 17.5 12 17.5C8.96 17.5 6.5 15.04 6.5 12C6.5 8.96 8.96 6.5 12 6.5C15.04 6.5 17.5 8.96 17.5 12ZM12 8C9.79 8 8 9.79 8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8Z" fill="currentColor"/>
+                                        <path d="M12 10C13.1 10 14 10.9 14 12C14 13.1 13.1 14 12 14C10.9 14 10 13.1 10 12C10 10.9 10.9 10 12 10Z" fill="currentColor"/>
+                                    </svg> */}
+                                    <img src={icons3} alt="" />
+                                </div>
+                                <div className="point-text">
+                                    <h4>Parks & Nature</h4>
+                                    <p>Jungle parks, wildlife & green spaces</p>
+                                </div>
+                            </div>
+
+                            <div className="point">
+                                <div className="point-icon">
+                                    {/* <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                                        <path d="M19 15L20.09 21.26L27 22L20.09 22.74L19 29L17.91 22.74L11 22L17.91 21.26L19 15Z" fill="currentColor"/>
+                                    </svg> */}
+                                    <img src={icons4} alt="" />
+                                </div>
+                                <div className="point-text">
+                                    <h4>Premium Amenities</h4>
+                                    <p>Fitness centers, spas & exclusive facilities</p>
+                                </div>
+                            </div>
+                        </div>
 
                         {/* <div className="contact-details">
                             <p className="contact-description">Hey there, <br />What are you waiting for… Contact us<br /> and be a part of Todays Luxuxry!</p>
@@ -151,7 +212,7 @@ export default function ContactForm() {
                         <TextField label="Message" variant="outlined" multiline rows={4} value={formData.message} onChange={handleUpdate('message')} fullWidth className="form-field" required />
                         {formErrors.message && <div className="error-message">{formErrors.message}</div>}
 
-                        <button type="submit" className="btn-white">Submit</button>
+                        <button type="submit" className="btn-blue">Submit</button>
                         {response && <span className="form-response">{response}</span>}
                     </form>
                 </div>

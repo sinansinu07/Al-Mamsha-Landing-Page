@@ -9,31 +9,31 @@ const stats = [
     {
         id: 1,
         title1: "",
-        title2: "UNITS DELIVERED",
+        title2: "Units Delivered",
         number: 47600,
     },
     {
         id: 2,
         title1: "",
-        title2: "UNITS IN PROGRESS",
+        title2: "Units In Progress",
         number: 40000,
     },
     {
         id: 3,
         title1: "COMMUNITIES",
-        title2: "LEADING REAL ESTATE DEVELOPER IN THE UAE",
+        title2: "Leading Real Estate Developer In The UAE",
         number: 4,
     },
     {
         id: 4,
         title1: "M SQ.FT.",
-        title2: "PROJECTS UNDER PLANNING & DEVELOPMENT",
+        title2: "Projects Under Planning & Development",
         number: 80,
     },
     {
         id: 5,
         title1: "CITIES",
-        title2: "GLOBAL PRESENCE",
+        title2: "Global Presence",
         number: 10
     },
 ]
@@ -70,7 +70,6 @@ export default function Stats() {
                             </div>
                         )
                     })}
-                    
                 </div>
             </div>
         </section>

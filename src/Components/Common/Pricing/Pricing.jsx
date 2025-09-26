@@ -139,12 +139,12 @@ export default function Pricing() {
                                 </div>
 
                                 <div className="card-footer">
-                                    <button className="inquiry-btn">
+                                    <button className="btn-blue-fill-2">
                                         Make Inquiry
                                     </button>
-                                    <button className="details-btn">
+                                    {/* <button className="details-btn">
                                         View Details
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </motion.div>

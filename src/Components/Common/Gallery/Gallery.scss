@@ -361,9 +361,9 @@
                 }
             }
 
-            .gallery-controls {
-                display: none;
-            }
+            // .gallery-controls {
+            //     display: none;
+            // }
 
             .gallery-pagination {
                 display: none;
@@ -429,7 +429,26 @@
             }
 
             .gallery-controls {
-                display: none;
+                left: -30px;
+                right: -30px;
+                padding: 0 20px;
+    
+                .gallery-nav-btn {
+                    background: transparent;
+                    border: none;
+                    color: #00a8e8;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 24px;
+                    box-shadow: none;
+
+                    &:hover {
+                        color: #259FBA;
+                        transform: scale(1.1);
+                        box-shadow: none;
+                        background: transparent;
+                    }
+                }
             }
         }
 
@@ -461,5 +480,16 @@
             }
         }
 
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section {
+        .gallery-wrapper {
+            .gallery-controls {
+                left: -35px;
+                right: -35px;
+            }
+        }
     }
 }

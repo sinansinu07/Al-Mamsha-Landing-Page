@@ -91,13 +91,13 @@ function PopupForm({ handleClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="modal-overlay">
+      className="popup-modal-overlay">
       <motion.div 
         initial={{ scale: 0.5 }}
         animate={{ scale: 1 }}
         exit={{ scale: 0.8 }}
         transition={{ duration: 0.5 }}
-        className={`modal-content`}>
+        className={`popup-modal-content`}>
         <IoClose className="closeButton" onClick={() => { handleClose() }}/>
         <div className="left">
             <img src={logo} alt="" />

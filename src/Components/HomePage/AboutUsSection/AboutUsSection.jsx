@@ -96,10 +96,10 @@ const AboutUsSection = () => {
         <section id="about-us" className="about-shuffle-section section-container">
             <ShuffleGrid />
             <div className="about-content">
-                <h2 className="tagline">Redefining Luxury Living Worldwide</h2>
-                <h1 className="main-title">About Damac Properties</h1>
+                <h2 className="tagline">Redefining Waterfront Luxury</h2>
+                <h1 className="main-title">About DAMAC Island Phase 2</h1>
                 <p>
-                Since 2002, DAMAC Properties has been at the forefront of the Middle East’s luxury real estate market, delivering award-winning residential, commercial and leisure properties across the region and the world. Invest with DAMAC and partner with a globally recognised leader in premium real estate development.
+                DAMAC Island Phase 2 brings an exclusive blend of luxury residences, vibrant activities, and world-class amenities along Dubai’s stunning waterfront. Designed to elevate modern living, it offers a lifestyle that combines leisure, adventure, and elegance in one iconic destination.
                 </p>
                 <a href="#services"><div className="btn-black">Explore Our Services</div></a>
             </div>

@@ -119,22 +119,10 @@
                 font-size: 25px;
             }
         }
-
-        .clients-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
     }
 }
 
 @media (max-width: 650px) {
-    .clients-section {
-        .clients-grid {
-            gap: 10px;
-        }
-    }
-}
-
-@media (max-width: 550px) {
     .clients-section {
         .head-div {
             flex-direction: column;
@@ -151,13 +139,44 @@
                 font-size: 20px;
             }
         }
+
+        .clients-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+
+            // Center the last item when it's alone in the row (22nd item)
+            .client:nth-child(22) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                max-width: 200px;
+            }
+        }
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
     .clients-section {
         .clients-grid {
-            grid-template-columns: repeat(2, 1fr);
+            .client-card {
+                .image {
+                    width: 50px;
+                }
+
+                .description {
+                    font-size: 12px;
+                }
+
+                &:hover {
+                    .image {
+                        transform: translateY(-10px) scale(0.8); // move up and scale down
+                    }
+    
+                .description {
+                    top: calc(25px); // position just below the scaled image
+                    opacity: 1;
+                    }
+                }
+            }
         }
     }
 }
