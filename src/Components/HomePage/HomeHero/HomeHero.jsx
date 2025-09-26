@@ -38,17 +38,19 @@ export default function HomeHero() {
           controls={false}
         />
       <div className="hero-content">
-        <h3 className="top-title">
-          {/* <FlipLinkText> */}
-          Damac Island Phase 2
-          {/* </FlipLinkText> */}
-        </h3>
-        <h1 className="title">
-          <span className="color">LIVE THE LUXURY</span>
-        </h1>
-        <h2 className="description">
-        Experience two decades of excellence with DAMAC — a global leader in luxury real estate, creating iconic homes and communities worldwide.
-        </h2>
+      <h3 className="top-title">
+        Damac Island Phase 2
+      </h3>
+      <h4 className="sub-title">
+        Starting from AED 2.5M
+      </h4>
+      <h1 className="title">
+        <span className="color">LIVE THE LUXURY</span>
+      </h1>
+      <h2 className="description">
+        Experience two decades of excellence with DAMAC — a global leader in luxury real estate.  
+        Discover DAMAC Island Phase 2, where iconic waterfront living meets world-class amenities.
+      </h2>
         <a href="#about-us">
           <div
             className="btn-white"

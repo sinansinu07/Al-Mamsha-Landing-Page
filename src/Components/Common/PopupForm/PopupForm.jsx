@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 
 import './PopupForm.scss';
 import logo from "../../../Assets/Logo/damac-white-logo.webp"
+import image from "../../../Assets/Gallery/img22.webp"
 import { useNavigate } from 'react-router-dom';
 import { IoClose } from 'react-icons/io5';
 import { TextField } from '@mui/material';
@@ -12,11 +13,10 @@ const PUBLIC_KEY = "_Brk5dkZd_0m-_xFM";
 const SERVICE_ID = "service_xad06ea";
 const TEMPLATE_ID = "template_bo3cjet";
 
-function PopupForm({ handleClose }) {
+function PopupForm({ handleClose, handleSubmit }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
+      name: '',
       phone: '+971',
       email: '',
       message: '',
@@ -29,8 +29,7 @@ function PopupForm({ handleClose }) {
   const errors = {};
 
   const validateErrors = () => {
-      if (formData?.firstName?.trim()?.length === 0) errors.firstName = "First Name is Required";
-      if (formData?.lastName?.trim()?.length === 0) errors.lastName = "Last Name is Required";
+      if (formData?.name?.trim()?.length === 0) errors.name = "Last Name is Required";
       if (formData?.phone?.trim()?.length === 0) errors.phone = "Phone No is Required";
       if (formData?.email?.trim()?.length === 0) errors.email = "Email is Required";
       // if (formData?.service?.trim()?.length === 0) errors.service = "Please select a service";
@@ -45,7 +44,7 @@ function PopupForm({ handleClose }) {
   const sendContactFormEmail = async (formData) => {
       const templateParams = {
           firstName: formData.firstName,
-          lastName: formData.lastName,
+          name: formData.name,
           phone: formData.phone,
           email: formData.email,
           message: formData.message,
@@ -63,7 +62,7 @@ function PopupForm({ handleClose }) {
       }
   };
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
       e.preventDefault();
       validateErrors();
 
@@ -71,13 +70,17 @@ function PopupForm({ handleClose }) {
           sendContactFormEmail(formData);
           setFormData({
               firstName: "",
-              lastName: "",
+              name: "",
               phone: "+971",
               email: "",
               message: "",
               service: "",
           });
           setFormErrors({});
+          // Call the handleSubmit prop to stop future popups
+          if (handleSubmit) {
+              handleSubmit();
+          }
       } else {
           console.log(errors);
           setFormErrors(errors);
@@ -100,23 +103,25 @@ function PopupForm({ handleClose }) {
         className={`popup-modal-content`}>
         <IoClose className="closeButton" onClick={() => { handleClose() }}/>
         <div className="left">
-            <img src={logo} alt="" />
-            <p>We’re all about creating communications that sparkle and 
+          <div className="left-content">
+            <img src={logo} alt="" className="logo" />
+            <p>We're all about creating communications that sparkle and 
               shine for the brands we love. 
-              But there’s more to us than just creating pretty pictures.
+              But there's more to us than just creating pretty pictures.
             </p>
+          </div>
+          <div className="left-image">
+              <img src={image} alt="DAMAC Islands Phase 2" />
+          </div>
         </div>
         <div className="right">
           {/* <div className="contact-col"> */}
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form onSubmit={handleFormSubmit} className="contact-form">
               <h1 className="title">Do you have any Questions?</h1>
               <p className="form-description">We will use the information to contact you ASAP! Thank you.</p>
 
-              <TextField label="First Name" variant="outlined" value={formData.firstName} onChange={handleUpdate('firstName')} fullWidth className="form-field" required />
-              {formErrors.firstName && <div className="error-message">{formErrors.firstName}</div>}
-
-              <TextField label="Last Name" variant="outlined" value={formData.lastName} onChange={handleUpdate('lastName')} fullWidth className="form-field" required />
-              {formErrors.lastName && <div className="error-message">{formErrors.lastName}</div>}
+              <TextField label="Name" variant="outlined" value={formData.name} onChange={handleUpdate('name')} fullWidth className="form-field" required />
+              {formErrors.name && <div className="error-message">{formErrors.name}</div>}
 
               <TextField label="Phone" variant="outlined" value={formData.phone} onChange={handleUpdate('phone')} fullWidth className="form-field" required />
               {formErrors.phone && <div className="error-message">{formErrors.phone}</div>}

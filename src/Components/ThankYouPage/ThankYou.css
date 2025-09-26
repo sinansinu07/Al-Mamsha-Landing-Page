@@ -1,7 +1,7 @@
 .thankyou {
     padding-top: 100px;
     padding-bottom: 50px;
-    height: 100%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +75,7 @@
 @media(max-width: 768px){
     .thankyou .msg-icon {
         width: 250px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .thankyou h1 {

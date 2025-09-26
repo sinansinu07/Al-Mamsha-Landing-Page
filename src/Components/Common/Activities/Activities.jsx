@@ -146,8 +146,7 @@ export default function Activities() {
             <div className="clients-section section-container">
                 <img className="bg-img" src={bg} alt="Client Image" />
                 <div className="head-div">
-                    <h2 className="main-title">Activities</h2>
-                    <h3 className="sub-title">Discover <span className="black">DAMAC Islands</span> - Your Ultimate Adventure Destination</h3>
+                    <h2 className="main-title">DAMAC Islands Phase 2 Activities</h2>
                 </div>
 
                 <div className="clients-grid">

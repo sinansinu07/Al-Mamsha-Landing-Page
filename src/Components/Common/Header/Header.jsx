@@ -27,9 +27,17 @@ export default function Header(){
 
     useEffect(() => {
         const handleScroll = () => {
-            if(window.scrollY > 100) {
+            // Debug logs - remove after testing
+            console.log('Current pathname:', location.pathname);
+            console.log('Scroll Y:', window.scrollY);
+            console.log('Is sticky currently:', isSticky);
+            
+            if(location.pathname === "/thank-you" || location.pathname !== "/") {
+                setIsSticky(true)
+            } else if(window.scrollY > 100) {
                 setIsSticky(true)
             } else {
+                console.log('Setting sticky to false');
                 setIsSticky(false)
             }
         };
@@ -45,7 +53,7 @@ export default function Header(){
         return () => {
         window.removeEventListener("scroll", handleScroll);
         };
-    }, [location.pathname, mobileMenu]);
+    }, [location.pathname, isSticky]);
 
     return (
         <nav className='navbar-container'>

@@ -10,14 +10,19 @@ export const navs = [
         path: "#about-us"
     },
     {
-        id: 5,
+        id: 3,
         name: "Services",
         path: "#services"
     },
     {
-        id: 6,
-        name: "Testimonials",
-        path: "#testimonials"
+        id: 4,
+        name: "Pricing",
+        path: "#pricing"
+    },
+    {
+        id: 5,
+        name: "Gallery",
+        path: "#gallery"
     },
     // {
     //     id: 6,

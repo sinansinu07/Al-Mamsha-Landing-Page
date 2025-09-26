@@ -96,7 +96,7 @@ export default function Gallery() {
     }, [isModalOpen]);
 
     return (
-        <section className="gallery-section">
+        <section id="gallery" className="gallery-section">
             <div className="gallery-container">
                 <div className="gallery-header">
                     <h2 className="gallery-title">

@@ -17,7 +17,7 @@ const pricingData = [
     {
         id: 1,
         bedrooms: "4 BED",
-        price: "2.45M",
+        price: "2.75M",
         size: "2,208",
         sizeUnit: "sq ft",
         features: [
@@ -33,7 +33,7 @@ const pricingData = [
     {
         id: 2,
         bedrooms: "5 BED",
-        price: "3.4M",
+        price: "3.75M",
         size: "3,178",
         sizeUnit: "sq ft",
         features: [
@@ -49,7 +49,8 @@ const pricingData = [
     {
         id: 3,
         bedrooms: "6 BED",
-        price: "7.4M",
+        price: null,
+        quote: "Get a Quote for Enquiry Price",
         size: "4,440",
         sizeUnit: "sq ft",
         features: [
@@ -66,7 +67,7 @@ const pricingData = [
 
 export default function Pricing() {
     return (
-        <section className="pricing-section">
+        <section id="pricing" className="pricing-section">
             <div className="pricing-container">
                 <div className="pricing-header">
                     <h2 className="pricing-title">
@@ -121,8 +122,15 @@ export default function Pricing() {
                                 <div className="villa-header">
                                     <h3 className="bedrooms">{villa.bedrooms}</h3>
                                     <div className="price">
-                                        <span className="currency">AED</span>
-                                        <span className="amount">{villa.price}</span>
+                                        {villa.price ? (
+                                            <>
+                                                <span className="starting-from">Starting from</span>
+                                                <span className="currency">AED</span>
+                                                <span className="amount">{villa.price}</span>
+                                            </>
+                                        ) : (
+                                            <span className="quote-text">{villa.quote}</span>
+                                        )}
                                     </div>
                                 </div>
 
@@ -139,9 +147,9 @@ export default function Pricing() {
                                 </div>
 
                                 <div className="card-footer">
-                                    <button className="btn-blue-fill-2">
-                                        Make Inquiry
-                                    </button>
+                                    <a href="#contact-us"><button className="btn-blue-fill-2">
+                                        Make Enquiry
+                                    </button></a>
                                     {/* <button className="details-btn">
                                         View Details
                                     </button> */}
