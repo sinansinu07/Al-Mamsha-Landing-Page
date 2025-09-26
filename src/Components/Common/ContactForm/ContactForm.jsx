@@ -8,6 +8,8 @@ import icons1 from "../../../Assets/Icons/icon4.png";
 import icons2 from "../../../Assets/Icons/icon8.png";
 import icons3 from "../../../Assets/Icons/icon14.png";
 import icons4 from "../../../Assets/Icons/icon9.png";
+import PhoneInput from "react-phone-input-2"
+import "react-phone-input-2/lib/style.css";
 
 const PUBLIC_KEY = "_Brk5dkZd_0m-_xFM";
 const SERVICE_ID = "service_xad06ea";
@@ -18,7 +20,7 @@ export default function ContactForm() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        phone: '+971',
+        phone: '',
         email: '',
         message: '',
         service: '',
@@ -191,8 +193,39 @@ export default function ContactForm() {
 
                         <TextField label="Last Name" variant="outlined" value={formData.lastName} onChange={handleUpdate('lastName')} fullWidth className="form-field" required />
                         {formErrors.lastName && <div className="error-message">{formErrors.lastName}</div>}
-
-                        <TextField label="Phone" variant="outlined" value={formData.phone} onChange={handleUpdate('phone')} fullWidth className="form-field" required />
+                        
+                        <PhoneInput
+                        country={""}
+                        value={formData.phone}
+                        onChange={(phone) => {
+                            setFormData((prev) => ({ ...prev, phone })); // save full phone like +971xxxxxxxxx
+                        }}
+                        inputProps={{
+                            name: "phone",
+                            required: true,
+                        }}
+                        // ---- STYLES TO MATCH MUI TEXTFIELD ----
+                        inputStyle={{
+                            width: "100%",
+                            height: "56px", // same as MUI default height
+                            borderRadius: "20px",
+                            border: "1px solid rgba(255, 255, 255, 0.3)",
+                            backgroundColor: "transparent",
+                            color: "white",
+                            paddingLeft: "50px", // space for flag dropdown
+                            fontSize: "16px",
+                            fontFamily: '"Oswald", sans-serif',
+                        }}
+                        buttonStyle={{
+                            border: "none",
+                            backgroundColor: "transparent",
+                            borderRight: "1px solid rgba(255, 255, 255, 0.3)",
+                            borderRadius: "20px 0 0 20px",
+                        }}
+                        containerStyle={{
+                            width: "100%",
+                        }}
+                        />
                         {formErrors.phone && <div className="error-message">{formErrors.phone}</div>}
 
                         <TextField label="Email" variant="outlined" value={formData.email} onChange={handleUpdate('email')} fullWidth className="form-field" required />

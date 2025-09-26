@@ -8,7 +8,8 @@ import image from "../../../Assets/Gallery/img22.webp"
 import { useNavigate } from 'react-router-dom';
 import { IoClose } from 'react-icons/io5';
 import { TextField } from '@mui/material';
-
+import PhoneInput from "react-phone-input-2"
+import "react-phone-input-2/lib/style.css";
 const PUBLIC_KEY = "_Brk5dkZd_0m-_xFM";
 const SERVICE_ID = "service_xad06ea";
 const TEMPLATE_ID = "template_bo3cjet";
@@ -17,7 +18,7 @@ function PopupForm({ handleClose, handleSubmit }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
       name: '',
-      phone: '+971',
+      phone: '',
       email: '',
       message: '',
       service: '',
@@ -123,7 +124,53 @@ function PopupForm({ handleClose, handleSubmit }) {
               <TextField label="Name" variant="outlined" value={formData.name} onChange={handleUpdate('name')} fullWidth className="form-field" required />
               {formErrors.name && <div className="error-message">{formErrors.name}</div>}
 
-              <TextField label="Phone" variant="outlined" value={formData.phone} onChange={handleUpdate('phone')} fullWidth className="form-field" required />
+              <PhoneInput
+                country={""}
+                value={formData.phone}
+                onChange={(phone) => setFormData(prev => ({ ...prev, phone }))}
+                inputProps={{
+                  name: "phone",
+                  required: true,
+                }}
+                inputStyle={{
+                  width: "100%",
+                  height: "56px",
+                  border: "1px solid #e0e0e0",
+                  borderRadius: "12px",
+                  paddingLeft: "50px",
+                  fontSize: "16px",
+                  fontFamily: "inherit",
+                  background: "white",
+                  color: "#333",
+                  transition: "all 0.3s ease",
+                }}
+                buttonStyle={{
+                  border: "none",
+                  borderRight: "1px solid #e0e0e0",
+                  borderRadius: "12px 0 0 12px",
+                  backgroundColor: "#f5f5f5",
+                }}
+                containerStyle={{
+                  width: "100%",
+                }}
+                // apply focus + hover like MUI
+                onFocus={(e) => {
+                  e.target.style.border = "2px solid #00a8e8";
+                }}
+                onBlur={(e) => {
+                  e.target.style.border = "1px solid #e0e0e0";
+                }}
+                onMouseOver={(e) => {
+                  if (document.activeElement !== e.target) {
+                    e.target.style.border = "2px solid #00a8e8";
+                  }
+                }}
+                onMouseOut={(e) => {
+                  if (document.activeElement !== e.target) {
+                    e.target.style.border = "1px solid #e0e0e0";
+                  }
+                }}
+              />
               {formErrors.phone && <div className="error-message">{formErrors.phone}</div>}
 
               <TextField label="Email" variant="outlined" value={formData.email} onChange={handleUpdate('email')} fullWidth className="form-field" required />

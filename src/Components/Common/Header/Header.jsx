@@ -77,7 +77,7 @@ export default function Header(){
                                 </li>
                             )
                         })}
-                        <div className="mobile-menu-footer">
+                        {/* <div className="mobile-menu-footer">
                             <p className="social-head">Follow us On :</p>
                             <div className="social-links">
                                 <a href=""><FaFacebook /></a>
@@ -86,7 +86,7 @@ export default function Header(){
                                 <a href=""><FaXTwitter /></a>
                                 <a href=""><FaTiktok /></a>
                             </div>
-                        </div>
+                        </div> */}
                     </ul>
                     {/* <hr className='menu-hr'/>
                     <BiLogIn className='login-icon'/> */}
@@ -104,7 +104,7 @@ export default function Header(){
                 
             </div>
             
-            <div  className="whatsapp-div"><a href="https://api.whatsapp.com/send/?phone=971558739884&text&type=phone_number&app_absent=0">
+            <div  className="whatsapp-div"><a href="/">
                 <img src={whatsapp} alt="WhatsApp" />
             </a></div>
         </nav>

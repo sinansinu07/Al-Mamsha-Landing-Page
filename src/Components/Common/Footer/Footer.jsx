@@ -23,12 +23,12 @@ export default function Footer() {
                             <p className="address">
                                 DAMAC Islands Phase 2,<br /> Dubai, United Arab Emirates
                             </p>
-                            <p className="email">
+                            {/* <p className="email">
                                 <a href="mailto:islands@damacgroup.com">islands@damacgroup.com</a>
                             </p>
                             <p className="phone">
                                 <a href="tel:+97144249044">+971 4 424 9044</a>
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </div>
