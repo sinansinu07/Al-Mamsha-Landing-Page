@@ -7,6 +7,7 @@ import AboutUsSection from "../Components/HomePage/AboutUsSection/AboutUsSection
 import Testimonials from "../Components/HomePage/Testimonials/Testimonials";
 import Amenities from "../Components/HomePage/Amenities/Amenities";
 import Gallery from "../Components/Common/Gallery/Gallery";
+import Pricing from "../Components/Common/Pricing/Pricing";
 
 export default function HomePage() {
     return (
@@ -16,9 +17,9 @@ export default function HomePage() {
             <ContactForm/>
             <Amenities/>
             <Stats/>
-            <Gallery/>
+            <Pricing/>
             <Activities/>
-            <Testimonials/>
+            <Gallery/>
         </Fragment>
     )
 }

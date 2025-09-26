@@ -87,7 +87,7 @@ export default function Header(){
                     <a className="btn-white-div" href="#contact-us">
                         <div className="btn-white phone" >
                             {/* <FlipLinkBtn isHovered={isHovered}> */}
-                                {(isSticky || isMobile) ? <MdCall className="login-icon"/> : "Contact Us"}
+                                {(isMobile) ? <MdCall className="login-icon"/> : "Contact Us"}
                             {/* </FlipLinkBtn> */}
                         </div>
                     </a>

@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { TextField, MenuItem } from '@mui/material';
-import { IoLocationOutline } from "react-icons/io5";
-import { SlPhone } from "react-icons/sl";
-import { MdOutlineEmail } from "react-icons/md";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import "./ContactForm.scss";

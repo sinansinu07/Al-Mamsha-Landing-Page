@@ -1,0 +1,285 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1010;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px;
+
+  &:hover {
+    color: #333;
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+  }
+}
+
+.left {
+  flex: 1;
+  background: linear-gradient(135deg, #00a8e8, #0099cc);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 40px;
+  color: white;
+  text-align: center;
+
+  img {
+    width: 200px;
+    margin-bottom: 30px;
+    filter: brightness(0) invert(1);
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 300px;
+    opacity: 0.9;
+  }
+}
+
+.right {
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .form-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .form-field {
+    width: 100%;
+
+    .MuiOutlinedInput-root {
+      color: #333;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+
+      fieldset {
+        border-color: #e0e0e0;
+        border-width: 1px;
+      }
+
+      &:hover fieldset {
+        border-color: #00a8e8;
+        border-width: 2px;
+      }
+
+      &.Mui-focused fieldset {
+        border-color: #00a8e8;
+        border-width: 2px;
+      }
+    }
+
+    .MuiInputLabel-root {
+      color: #666;
+    }
+
+    .MuiInputLabel-root.Mui-focused {
+      color: #00a8e8;
+    }
+
+    .MuiInputBase-input {
+      color: #333;
+    }
+  }
+
+  .btn-white {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, #00a8e8, #0099cc);
+    color: white;
+    border: 2px solid #00a8e8;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+
+    &:hover {
+      background: transparent;
+      color: #00a8e8;
+    }
+  }
+}
+
+.form-response {
+  font-size: 14px;
+  color: #00a8e8;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column;
+    max-height: 95vh;
+    margin: 10px;
+  }
+
+  .left {
+    padding: 40px 30px;
+    
+    img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      max-width: 250px;
+    }
+  }
+
+  .right {
+    padding: 40px 30px;
+  }
+
+  .contact-form {
+    .title {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-content {
+    margin: 0;
+    max-height: 98vh;
+  }
+
+  .left {
+    padding: 30px 20px;
+    
+    img {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 13px;
+      max-width: 200px;
+    }
+  }
+
+  .right {
+    padding: 30px 20px;
+  }
+
+  .contact-form {
+    gap: 15px;
+
+    .title {
+      font-size: 22px;
+    }
+
+    .form-description {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .left {
+    padding: 20px 15px;
+    
+    img {
+      width: 100px;
+    }
+
+    p {
+      font-size: 12px;
+      max-width: 180px;
+    }
+  }
+
+  .right {
+    padding: 20px 15px;
+  }
+
+  .contact-form {
+    .title {
+      font-size: 20px;
+    }
+
+    .form-description {
+      font-size: 12px;
+    }
+  }
+}
