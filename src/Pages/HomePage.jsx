@@ -1,25 +1,28 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import HomeHero from "../Components/HomePage/HomeHero/HomeHero";
-import Stats from "../Components/Common/Stats/Stats";
-import Activities from "../Components/Common/Activities/Activities";
 import ContactForm from "../Components/Common/ContactForm/ContactForm";
-import AboutUsSection from "../Components/HomePage/AboutUsSection/AboutUsSection";
-import Testimonials from "../Components/HomePage/Testimonials/Testimonials";
-import Amenities from "../Components/HomePage/Amenities/Amenities";
 import Gallery from "../Components/Common/Gallery/Gallery";
-import Pricing from "../Components/Common/Pricing/Pricing";
+import Helmet from "../General/Helmet";
+import { initHomePageScripts } from "../Utils/scripts";
+import ProjectDetails from "../Components/HomePage/ProjectDetails/ProjectDetails";
+import AboutUs from "../Components/HomePage/AboutUs/AboutUs";
+import QuickContact from "../Components/Common/QuickContact/QuickContact";
 
 export default function HomePage() {
+    useEffect(() => {
+        const cleanup = initHomePageScripts();
+        return cleanup;
+    }, []);
+
     return (
         <Fragment>
+            <Helmet title="Al Mamsha | Sharjah's First Fully Walkable Community" />
             <HomeHero/>
-            <AboutUsSection/>
+            <AboutUs/>
+            <QuickContact/>
+            <ProjectDetails/> 
             <ContactForm/>
-            <Amenities/>
-            <Stats/>
-            <Pricing/>
-            <Activities/>
-            <Gallery/>
+            {/* <Gallery/> */}
         </Fragment>
     )
 }

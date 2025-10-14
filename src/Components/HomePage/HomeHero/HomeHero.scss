@@ -23,32 +23,44 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     pointer-events: none;
     z-index: 1;
   }
 
   .hero-content {
     position: absolute;
-    color: white;
-    top: 0px;
-    left: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    height: 100%;
+    color: white;
+    background: transparent;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: left;
-    text-align: left;
-    /* max-width: 1000px; */
-    // margin-right: auto;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 100px;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
     z-index: 2;
+    max-width: 1400px;
+    padding: 0 20px;
+
+    .left-div {
+      width: 100%;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      align-content: center;
+    }
 
     .top-title {
-      font-size: 30px;
+      font-size: 35px;
       margin-top: 20px;
       font-weight: 800;
       text-transform: uppercase;
@@ -59,7 +71,7 @@
     }
 
     .sub-title {
-      font-size: 20px;
+      font-size: 25px;
       font-weight: 800;
       text-transform: uppercase;
       margin-top: 10px;
@@ -67,7 +79,7 @@
     }
 
     .title {
-      font-size: 40px;
+      font-size: 45px;
       font-weight: 800;
       text-transform: uppercase;
       margin-top: 10px;
@@ -79,7 +91,7 @@
     
     .description {
       margin-top: 20px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 800;
       max-width: 700px;
       // text-align: left;
@@ -87,106 +99,95 @@
       /* color: #17254e; */
     }
 
-    .btn-white {
+    .btn.btn-white-fill {
       margin-top: 30px;
-      width: 150px;
-    }
-  }
-}
-
-
-
-/* Adjustments for smaller screens */
-
-@media (max-width: 1500px) {
-  .home-hero {
-    .hero-content {
-      .top-title {
-        font-size: 30px;
-      }
-
-      .title {
-        font-size: 50px;
-      }
+      width: 250px;
     }
   }
 }
 
 @media (max-width: 1200px) {
-  .home-hero {
+  .home-hero {        
     .hero-content {
-      .top-title {
-        font-size: 30px;
-      }
-
-      .title {
-        font-size: 50px;
-      }
-
-      .description {
-        font-size: 18px;
-      }
+      gap: 50px;
     }
   }
 }
 
+@media (max-width: 1000px) {
+  .home-hero {
+    // padding: 100px 20px;
+    
+    .hero-content {
+      padding: 0 30px;
+    }   
+  }
+}
 
 @media (max-width: 900px) {
   .home-hero {
     .hero-content {
-      text-align: center;
-      align-items: center;
-      
-      .top-title, .title, .description {
-        text-align: center;
+      flex-direction: column;
+      gap: 40px;
+
+      .left-div {
+        width: 100%;
         align-items: center;
+        text-align: center;
       }
 
-      .description {
-        text-transform: inherit;
+      .contact-form {
+        display: none;
+      }
+    }   
+  }
+}
+
+@media (max-width: 700px) {
+  .home-hero {
+    .hero-content {
+      
+      .contact-form {
+        width: 100%;
+        padding: 30px 20px;
       }
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .home-hero {
+    
     .hero-content {
-      padding-left: 50px;
-      padding-right: 50px;
-
-      .top-title {
-        font-size: 25px;
-      }
-
-      .title {
-        font-size: 35px;
-      }
-
-      .description {
-        font-size: 16px;
-      }
-    }
+      padding: 0 20px;
+      gap: 30px;
+    }   
   }
 }
 
 @media (max-width: 500px) {
   .home-hero {
     .hero-content {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding: 0 15px;
+      
+      .contact-form {
+        padding: 25px 20px;
+        gap: 10px;
 
-      .top-title {
-        font-size: 25px;
-      }
-
-      .title {
-        font-size: 35px;
-      }
-
-      .description {
-        font-size: 16px;
+        .form-description {
+          margin-bottom: 10px;
+        }
       }
     }
+  }
+}
+
+@media (max-width: 420px) {
+  .home-hero {
+    .hero-content {
+      .top-title {
+        max-width: 250px;
+      }
+    }   
   }
 }

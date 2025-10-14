@@ -173,6 +173,19 @@
         }
     }
 
+    
+    .btn.btn-blue-fill {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: normal;
+        
+        &:hover {
+            background: black;
+            color: white;
+            border: 2px solid black;
+        }
+    }
 
     // Modal Styles
     .gallery-modal {

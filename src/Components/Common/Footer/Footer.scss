@@ -75,17 +75,17 @@
 
             &.contact_us_col {
                 .company_logo {
+                    margin-top: -20px;
                     width: 200px;
                     height: auto;
                 }
 
                 .contact_details_group {
-                    margin-top: 20px;
+                    margin-top: 10px;
                     
                     p {
                         font-size: 14px;
                         line-height: 1.5;
-                        margin-bottom: 5px;
                         color: #ccc;
 
                         a {
@@ -236,8 +236,9 @@
         z-index: 1; // Make sure copyright text is above the large "WECAN" text
 
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        text-align: center;
         font-size: 13px;
 
         @media (max-width: 600px) {

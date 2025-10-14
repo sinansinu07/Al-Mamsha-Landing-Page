@@ -1,4 +1,4 @@
-import logo from "../../../Assets/Logo/damac-white-logo.webp"
+import logo from "../../../Assets/Logo/Al-Mamsha-logo-final.png"
 
 import { FaFacebook, FaLinkedin, FaTelegram, FaTelegramPlane, FaTiktok, FaTwitter, FaYoutube } from "react-icons/fa";
 
@@ -15,14 +15,14 @@ export default function Footer() {
                 <div className="footer_col contact_us_col">
                     <div className="contact_content">
                         {/* DAMAC Logo */}
-                        <img src={logo} className="company_logo" alt="DAMAC Properties" />
+                        <img src={logo} className="company_logo" alt="Al Mamsha" />
                         <div className="contact_details_group">
                             <p className="description">
-                                Experience the ultimate island lifestyle at DAMAC Islands Phase 2, where luxury meets nature in Dubai's most exclusive waterfront community.
+                                Al Mamsha is Sharjah's first fully walkable community, offering modern lifestyle living with two iconic projects - Hamsa and Raseel. Experience sustainable urban living with premium amenities in the heart of New Sharjah.
                             </p>
-                            <p className="address">
+                            {/* <p className="address">
                                 DAMAC Islands Phase 2,<br /> Dubai, United Arab Emirates
-                            </p>
+                            </p> */}
                             {/* <p className="email">
                                 <a href="mailto:islands@damacgroup.com">islands@damacgroup.com</a>
                             </p>
@@ -33,39 +33,39 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Column 2: Island Activities */}
+                {/* Column 2: Community Features */}
                 <div className="footer_col">
-                    <h2 className="head">Island Activities</h2>
+                    <h2 className="head">Community Features</h2>
                     <ul>
-                        <li>Aqua Dome & Water Sports</li>
-                        <li>Jungle River & Zipline</li>
-                        <li>Wildlife Parks & Nature</li>
-                        <li>Yoga & Wellness</li>
-                        <li>Private Boat Rides</li>
+                        <li>Walkable Neighborhoods</li>
+                        <li>Retail & Shopping</li>
+                        <li>Modern Architecture</li>
+                        <li>Sustainable Living</li>
+                        <li>Smart Community</li>
                     </ul>
                 </div>
 
-                {/* Column 3: Island Amenities */}
+                {/* Column 3: Project Amenities */}
                 <div className="footer_col">
-                    <h2 className="head">Island Amenities</h2>
+                    <h2 className="head">Project Amenities</h2>
                     <ul>
-                        <li>Luxury Villas (4-6 Bedrooms)</li>
-                        <li>Private Pools & Gardens</li>
-                        <li>Hot Springs Spa</li>
-                        <li>Fitness Centers</li>
-                        <li>Wedding Venues</li>
+                        <li>Al Mamsha Hamsa</li>
+                        <li>Al Mamsha Raseel</li>
+                        <li>Premium Residences</li>
+                        <li>Retail Spaces</li>
+                        <li>Community Facilities</li>
                     </ul>
                 </div>
 
-                {/* Column 4: Island Experience */}
+                {/* Column 4: Location Benefits */}
                 <div className="footer_col">
-                    <h2 className="head">Island Experience</h2>
+                    <h2 className="head">Location Benefits</h2>
                     <ul>
-                        <li>Lagoon Tours & Hammocks</li>
-                        <li>Mini Golf & Sports</li>
-                        <li>Parrot Park & Wildlife</li>
-                        <li>Central Hub Fountain</li>
-                        <li>Gondola Style Paddling</li>
+                        <li>Sheikh Mohammed Bin Zayed Road</li>
+                        <li>5 Minutes to Sharjah Airport</li>
+                        <li>10 Minutes to Dubai Border</li>
+                        <li>University City Access</li>
+                        <li>New Sharjah Heart</li>
                     </ul>
                 </div>
             </div>
@@ -78,7 +78,7 @@ export default function Footer() {
                     <p>Terms & Conditions</p>
                 </div>
                 <div className="right_section">
-                    <p>© 2025. All Rights Reserved by DAMAC Islands Phase 2.</p>
+                    <p>© 2025. All Rights Reserved by Al Mamsha.</p>
                 </div>
             </div>
         </footer>

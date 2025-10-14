@@ -152,7 +152,7 @@ export default function Gallery() {
                                     </div>
                                     <div className="gallery-overlay">
                                         <div className="gallery-info">
-                                            <h3 className="image-title">{image.alt}</h3>
+                                            {/* <h3 className="image-title">{image.alt}</h3> */}
                                             <p className="image-description">
                                                 Click to view in full size
                                             </p>
@@ -176,6 +176,10 @@ export default function Gallery() {
                     {/* Pagination */}
                     <div className="gallery-pagination"></div>
                 </div>
+
+                <a href="#contact-us"><div className="btn btn-blue-fill">
+                    Get Payment Plan
+                </div></a>
             </div>
 
             {/* Modal */}
@@ -195,9 +199,9 @@ export default function Gallery() {
                         </div>
 
                         <div className="modal-info">
-                            <h3 className="modal-title">
+                            {/* <h3 className="modal-title">
                                 {galleryImages[currentImageIndex].alt}
-                            </h3>
+                            </h3> */}
                             <p className="modal-counter">
                                 {currentImageIndex + 1} / {galleryImages.length}
                             </p>

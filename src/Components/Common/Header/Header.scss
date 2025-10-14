@@ -46,11 +46,7 @@
     }
 
     .nav-links-div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+        display: none; // Hide desktop navigation completely
 
         .mobile-menu-header {
             display: none;
@@ -62,7 +58,6 @@
             justify-content: center;
             align-items: center;
             gap: 30px;
-            // padding: 0px 30px;
 
             .menu-items {
                 display: flex;
@@ -70,8 +65,7 @@
                 align-items: center;
                 letter-spacing: 1px;
                 text-decoration: none;
-                font-size: 14px;
-                // font-weight: 700;
+                font-size: 16px;
                 text-transform: uppercase;
                 cursor: pointer;
                 color: white;
@@ -86,13 +80,13 @@
 
                 svg {
                     font-size: 16px;
-                    color: #259FBA;
+                    color: #B6735D;
                     transition: .5s;
                 }
             }
 
             .menu-items:hover a {
-                color: #259FBA;
+                color: #B6735D;
                 transition: .5s;
                 font-weight: bold;
             }
@@ -103,12 +97,12 @@
             }
 
             a:hover {
-                color: #259FBA;
+                color: #B6735D;
                 transition: .5s;
             }
 
             a.active {
-                color: #259FBA;
+                color: #B6735D;
                 transition: .5s;
             }
         }
@@ -124,44 +118,175 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
-        z-index: 1003;
+        // z-index: 1003;
     }
 
     .btn-white-div {
-        z-index: 1003;
+        width: 170px;
     }
 
-    .btn-white {
-        width: 130px;
-        font-weight: normal;
-        z-index: 1003 !important;
-    }
+    .phone-number {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
 
-    .btn-white.phone {
         .login-icon {
-            font-size: 20px;
+            font-size: 15px;
         }
     }
 
-    .menu-icon, .menu-icon-close {
-        color: white;
-        font-size: 30px;
-        cursor: pointer;
-        display: none;
-        z-index: 1001;
+    // HamburgerButton component handles its own styling
+}
+
+// Desktop Side Menu Styles
+.desktop-side-menu {
+    position: fixed;
+    top: 0;
+    right: -400px; // Start hidden off-screen
+    width: 400px;
+    height: 100vh;
+    background: #B6735D;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    z-index: 1003;
+    transition: right 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 40px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+
+    &.show {
+        right: 0;
+    }
+
+    // Add backdrop overlay
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &.show::before {
+        opacity: 1;
+    }
+
+    .side-menu-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+        .side-menu-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+
+            .side-menu-item {
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 25px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    display: block;
+                    padding: 10px 20px;
+
+                    &:hover {
+                        color: #B6735D;
+                        transform: translateX(10px);
+                    }
+
+                    &.active {
+                        color: #B6735D;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        width: 0;
+                        height: 3px;
+                        background: #B6735D;
+                        transition: all 0.3s ease;
+                        transform: translateX(-50%);
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        // .side-menu-contact {
+
+        //     .side-menu-contact-btn {
+        //         display: flex;
+        //         align-items: center;
+        //         gap: 15px;
+        //         background: #B6735D;
+        //         color: white;
+        //         padding: 20px 40px;
+        //         border-radius: 50px;
+        //         text-decoration: none;
+        //         font-size: 18px;
+        //         font-weight: 600;
+        //         text-transform: uppercase;
+        //         letter-spacing: 1px;
+        //         transition: all 0.3s ease;
+        //         box-shadow: 0 4px 15px rgba(37, 159, 186, 0.3);
+
+        //         &:hover {
+        //             background: #1e7a8a;
+        //             transform: translateY(-2px);
+        //             box-shadow: 0 6px 20px rgba(37, 159, 186, 0.4);
+        //         }
+
+        //         .contact-icon {
+        //             font-size: 20px;
+        //         }
+        //     }
+        // }
     }
 }
 
 .whatsapp-div {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
-    transition: transform 0.3s ease;
-    background: transparent;
+    background: #B6735D;
+    padding: 10px 15px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: fixed;
+    margin-top: 50px;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    rotate: -90deg;
 
     img {
         width: 100%;
@@ -173,6 +298,28 @@
         transform: scale(1.05);
         transition: transform 0.3s ease;
     }
+}
+
+.contact-us-div {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: #B6735D;
+    color: white;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: fixed;
+    margin-top: -50px;
+    top: 50%;
+    right: -65px;
+    transform: translateY(-50%);
+    width: 130px;
+    height: 50px;
+    rotate: -90deg;
 }
 
 // .navbar.bg-black {
@@ -215,9 +362,15 @@
     // }
 
     // .nav-links-div ul li:hover, .nav-links-div ul li a:hover, .nav-links-div .login-icon:hover {
-    //     color: #259FBA;
+    //     color: #B6735D;
     //     transition: .5s;
     // }
+}
+
+.navbar.thank-you-header {
+    .nav-links-div {
+        display: none;
+    }
 }
 
 @media (max-width: 1600px) {
@@ -227,16 +380,41 @@
     }
 }
 
+// Responsive adjustments for desktop side menu
+@media (max-width: 1200px) {
+    .desktop-side-menu {
+        width: 350px;
+        right: -350px;
+
+        .side-menu-content {
+            .side-menu-nav {
+                .side-menu-item a {
+                    font-size: 24px;
+                }
+            }
+
+            .side-menu-contact {
+                .side-menu-contact-btn {
+                    font-size: 16px;
+                    padding: 18px 35px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 1120px) {
     .navbar {
         top: 0;
 
-        .menu-icon {
-            display: block;
+        // Hide desktop side menu on mobile
+        .desktop-side-menu {
+            display: none;
         }
 
         .nav-links-div {
             position: relative;
+            display: block; // Show mobile navigation
 
             .menu-bar {
                 position: fixed;
@@ -281,7 +459,6 @@
                 bottom: 10px;
                 left: 50%;
                 transform: translateX(-50%);
-                // width: 100%;
                 color: white;
                 display: block;
                 justify-content: center;
@@ -293,7 +470,6 @@
                 }
 
                 .social-links {
-                    // margin-top: 30px;
                     display: flex;
                     justify-content: left;
                     text-align: left;
@@ -315,7 +491,7 @@
                     }
 
                     svg:hover {
-                        color: #259FBA;
+                        color: #B6735D;
                         transform: scale(1.1);
                         transition: .3s;
                     }
@@ -346,7 +522,7 @@
 
 @media (max-width: 600px) {
     .navbar {
-        .btn-white.login, .btn-white.phone {
+        .btn.btn-white-fill {
             padding: 0px;
             height: 40px;
             width: 50px;
@@ -388,61 +564,6 @@
             }
         }
     }
-
-    .dropdownMenu {
-        position: fixed;
-        right: 0;
-        top: 70px;
-        padding-top: 30px;
-        padding-left: 50px;
-        padding-right: 0px;
-        margin-right: 0px;
-        width: 350px;
-        // height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: black;
-        color: white;
-        justify-content: flex-start;
-        z-index: 1000;
-        overflow-y: scroll;
-
-        .right {
-            .back-btn {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 10px;
-                font-size: 20px;
-                margin-bottom: 30px;
-                cursor: pointer;
-                transition: 0.5s;
-
-                svg {
-                    font-size: 20px;
-                }
-
-                &:hover {
-                    color: #259FBA;
-                    transition: 0.5s;
-            }
-            }
-
-            .service-links {
-                .service-grid {
-                    .title {
-                        font-size: 16px;
-                        font-weight: 900;
-                    }
-                }
-            }
-        }
-    }
-
-    .hide-dropdownMenu {
-        margin-right: -350px;
-        transition: 0.5s;
-    }
 }
 
 @media (max-width: 500px) {
@@ -458,9 +579,7 @@
             font-size: 12px;
         }
 
-        .menu-icon, .menu-icon-close {
-            font-size: 23px;
-        }
+        // HamburgerButton handles its own styling
 
         .nav-links-div {
             .menu-bar {

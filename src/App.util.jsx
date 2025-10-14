@@ -24,9 +24,9 @@ export const navs = [
         name: "Gallery",
         path: "#gallery"
     },
-    // {
-    //     id: 6,
-    //     name: "Contact Us",
-    //     path: "/contact-us"
-    // },
+    {
+        id: 6,
+        name: "Contact Us",
+        path: "#contact-us"
+    },
 ];

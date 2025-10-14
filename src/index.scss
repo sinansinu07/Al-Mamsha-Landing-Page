@@ -8,15 +8,8 @@
 
 // color code
 
-// hexa: ffffff
+// hexa: #B6735D
 
-// 00171f
-
-// 003459
-
-// 007ea7
-
-// 00a8e8
 
 html, body {
   height: 100%;
@@ -55,6 +48,10 @@ button, input, select {
   font-family: "Outfit", sans-serif;
 }
 
+button {
+  font-weight: 600;
+}
+
 ul {
   list-style: none;
 }
@@ -77,145 +74,113 @@ a:hover {
   text-decoration: underline;
 
   &:hover {
-      color: #259FBA;
+      color: #B6735D;
   }
+}
+
+.btn {
+  padding: 10px 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  transition: .5s;
+  cursor: pointer;
+  border-radius: 30px;
+
+  svg {
+    font-size: 20px !important;
+  }
+
+  &:hover {
+    transition: .5s;
+  }
+}
+
+.btn2 {
+  border-radius: 10px;
 }
 
 .btn-white {
-  padding: 10px 15px;
-  text-transform: uppercase;
   color: white;
   background: transparent;
   border: 2px solid white;
-  font-weight: 600;
-  outline: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  transition: .5s;
-  cursor: pointer;
-  border-radius: 30px;
-}
 
-.btn-white:hover {
-  background: white;
-  color: black;
-  transition: .5s;
-  border: 2px solid white
+  &:hover {
+    background: white;
+    color: black;
+    border: 2px solid white
+  }
 }
 
 .btn-black {
-  padding: 10px 15px;
-  text-transform: uppercase;
   color: black;
   background: transparent;
   border: 2px solid black;
-  font-weight: 600;
-  outline: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  transition: .5s;
-  cursor: pointer;
-  border-radius: 30px;
+
+  &:hover {
+    background: black;
+    color: white;
+    border: 2px solid black
+  }
 }
 
-.btn-black:hover {
-  background: black;
-  color: white;
-  transition: .5s;
-  border: 2px solid black
-}
-
-.btn-blue {
-  padding: 10px 15px;
-  text-transform: uppercase;
-  color: #259FBA;
+.btn-primary {
+  color: #B6735D;
   background: transparent;
-  border: 2px solid #259FBA;
-  font-weight: 600;
-  outline: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 14px;
-  transition: .5s;
-  cursor: pointer;
-  border-radius: 30px;
+  border: 2px solid #B6735D;
+
+  &:hover {
+    background: #B6735D;
+    color: white;
+    border: 2px solid #B6735D
+  }
 }
 
-.btn-blue:hover {
-  background: transparent;
-  color: white;
-  transition: .5s;
+.btn-white-fill {
+  color: #B6735D;
+  background: white;
   border: 2px solid white;
+
+  &:hover {
+    background: transparent;
+    color: white;
+    transition: .5s;
+  }
 }
 
-.btn-black-fill-2 {
-  padding: 10px 15px;
+.btn-black-fill {
   color: white;
   background: black;
   border: 2px solid black;
-  font-weight: 600;
-  outline: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  font-size: 14px;
-  transition: .5s;
-  cursor: pointer;
-  border-radius: 10px;
 
-  svg {
-      font-size: 16px;
+  &:hover {
+    background: transparent;
+    color: black;
+    transition: .5s;
   }
 }
 
-.btn-black-fill-2:hover {
-  background: transparent;
-  color: black;
-  transition: .5s;
-}
-
-.btn-blue-fill-2 {
-  padding: 10px 15px;
+.btn-primary-fill {
   color: white;
-  background: #259FBA;
-  border: 2px solid #259FBA;
-  font-weight: 600;
-  outline: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  font-size: 14px;
-  transition: .5s;
-  cursor: pointer;
-  border-radius: 10px;
+  background: #B6735D;
+  border: 2px solid #B6735D;
 
-  svg {
-      font-size: 16px;
+  &:hover {
+    background: transparent;
+    color: #B6735D;
+    transition: .5s;
   }
-}
-
-.btn-blue-fill-2:hover {
-  background: transparent;
-  color: #259FBA;
-  transition: .5s;
 }
 
 .color {
-  color: #259FBA;
+  color: #B6735D;
 }
 
 .black {
@@ -316,7 +281,7 @@ a:hover {
     font-size: 30px;
   }
 
-  .btn-white, .btn-black, .btn-blue {
+  .btn-white, .btn-black, .btn-primary {
     padding: 8px 12px;
     font-size: 14px;
     font-weight: 600;
