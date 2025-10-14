@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from "@emailjs/browser";
 
 import './PopupForm.scss';
-import logo from "../../../Assets/Logo/damac-white-logo.webp"
-import image from "../../../Assets/Gallery/img22.webp"
 import { useNavigate } from 'react-router-dom';
 import { IoClose } from 'react-icons/io5';
 import { TextField } from '@mui/material';
@@ -45,41 +43,50 @@ function PopupForm({ handleClose, handleSubmit }) {
       setFormData((prev) => ({ ...prev, [field]: inputValue }));
   };
 
-  const sendContactFormEmail = async (formData) => {
-      const templateParams = {
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          message: formData.message,
-          time: new Date().toLocaleString(),
-          // service: formData.service,
-      };
+  // const sendContactFormEmail = async (formData) => {
+  //     const templateParams = {
+  //         name: formData.name,
+  //         phone: formData.phone,
+  //         email: formData.email,
+  //         message: formData.message,
+  //         time: new Date().toLocaleString(),
+  //         // service: formData.service,
+  //     };
 
-      try {
-          setIsLoading(true);
-          const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-          console.log("Email sent successfully!", response);
-          setResponse("Email sent successfully!");
+  //     try {
+  //         setIsLoading(true);
+  //         const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+  //         console.log("Email sent successfully!", response);
+  //         setResponse("Email sent successfully!");
           
-          // Close the popup and redirect after successful email sending
-          if (handleSubmit) {
-              handleSubmit();
-          }
-          navigate("/thank-you");
-      } catch (error) {
-          console.error("Email sending error:", error);
-          setResponse("Email sending error");
-      } finally {
-          setIsLoading(false);
-      }
-  };
+  //         // Close the popup and redirect after successful email sending
+  //         if (handleSubmit) {
+  //             handleSubmit();
+  //         }
+  //         navigate("/thank-you");
+  //     } catch (error) {
+  //         console.error("Email sending error:", error);
+  //         setResponse("Email sending error");
+  //     } finally {
+  //         setIsLoading(false);
+  //     }
+  // };
 
   const handleFormSubmit = (e) => {
       e.preventDefault();
       validateErrors();
 
       if (Object.keys(errors).length === 0) {
-          sendContactFormEmail(formData);
+          // sendContactFormEmail(formData);
+          alert("Email sent successfully!");
+          setFormData({
+              name: "",
+              phone: "",
+              email: "",
+              message: "",
+              service: "",
+          });
+          setFormErrors({});
       } else {
           console.log(errors);
           setFormErrors(errors);
@@ -101,7 +108,7 @@ function PopupForm({ handleClose, handleSubmit }) {
         transition={{ duration: 0.5 }}
         className={`popup-modal-content`}>
         <IoClose className="closeButton" onClick={() => { handleClose() }}/>
-        <div className="left">
+        {/* <div className="left">
           <div className="left-content">
             <img src={logo} alt="" className="logo" />
             <p>We're all about creating communications that sparkle and 
@@ -112,12 +119,12 @@ function PopupForm({ handleClose, handleSubmit }) {
           <div className="left-image">
               <img src={image} alt="DAMAC Islands Phase 2" />
           </div>
-        </div>
+        </div> */}
         <div className="right">
           {/* <div className="contact-col"> */}
             <form onSubmit={handleFormSubmit} className="contact-form">
-              <h1 className="title">Do you have any Questions?</h1>
-              <p className="form-description">We will use the information to contact you ASAP! Thank you.</p>
+              <h1 className="title">Get Your <span className="color">Exclusive Al Mamsha Offer</span></h1>
+              <p className="form-description">Join the Al Mamsha community and experience the future of urban living. We'll contact you with exclusive offers and project details.</p>
 
               <TextField label="Name" variant="outlined" value={formData.name} onChange={handleUpdate('name')} fullWidth className="form-field" required />
               {formErrors.name && <div className="error-message">{formErrors.name}</div>}
@@ -133,39 +140,43 @@ function PopupForm({ handleClose, handleSubmit }) {
                 inputStyle={{
                   width: "100%",
                   height: "56px",
-                  border: "1px solid #e0e0e0",
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
                   borderRadius: "12px",
                   paddingLeft: "50px",
                   fontSize: "16px",
                   fontFamily: "inherit",
-                  background: "white",
-                  color: "#333",
+                  background: "rgba(255, 255, 255, 0.1)",
+                  color: "white",
                   transition: "all 0.3s ease",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
                 }}
                 buttonStyle={{
                   border: "none",
-                  borderRight: "1px solid #e0e0e0",
+                  borderRight: "1px solid rgba(255, 255, 255, 0.2)",
                   borderRadius: "12px 0 0 12px",
-                  backgroundColor: "#f5f5f5",
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
                 }}
                 containerStyle={{
                   width: "100%",
                 }}
                 // apply focus + hover like MUI
                 onFocus={(e) => {
-                  e.target.style.border = "2px solid #00a8e8";
+                  e.target.style.border = "2px solid #B6735D";
                 }}
                 onBlur={(e) => {
-                  e.target.style.border = "1px solid #e0e0e0";
+                  e.target.style.border = "1px solid rgba(255, 255, 255, 0.2)";
                 }}
                 onMouseOver={(e) => {
                   if (document.activeElement !== e.target) {
-                    e.target.style.border = "2px solid #00a8e8";
+                    e.target.style.border = "2px solid #B6735D";
                   }
                 }}
                 onMouseOut={(e) => {
                   if (document.activeElement !== e.target) {
-                    e.target.style.border = "1px solid #e0e0e0";
+                    e.target.style.border = "1px solid rgba(255, 255, 255, 0.2)";
                   }
                 }}
               />
@@ -189,7 +200,7 @@ function PopupForm({ handleClose, handleSubmit }) {
               {formErrors.message && <div className="error-message">{formErrors.message}</div>}
 
               <button type="submit" className="btn-white" disabled={isLoading}>
-                {isLoading ? 'Sending...' : 'Submit'}
+                {isLoading ? 'Sending...' : 'Get Exclusive Al Mamsha Offer'}
               </button>
               {response && <span className="form-response">{response}</span>}
             </form>

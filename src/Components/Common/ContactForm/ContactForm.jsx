@@ -45,36 +45,37 @@ export default function ContactForm() {
         setFormData((prev) => ({ ...prev, [field]: inputValue }));
     };
 
-    const sendContactFormEmail = async (formData) => {
-        const templateParams = {
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email,
-            message: formData.message,
-            time: new Date().toLocaleString(),
-            // service: formData.service,
-        };
+    // const sendContactFormEmail = async (formData) => {
+    //     const templateParams = {
+    //         name: formData.name,
+    //         phone: formData.phone,
+    //         email: formData.email,
+    //         message: formData.message,
+    //         time: new Date().toLocaleString(),
+    //         // service: formData.service,
+    //     };
 
-        try {
-            setIsLoading(true);
-            const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-            console.log("Email sent successfully!", response);
-            setResponse("Email sent successfully!");
-            navigate("/thank-you");
-        } catch (error) {
-            console.error("Email sending error:", error);
-            setResponse("Email sending error");
-        } finally {
-            setIsLoading(false);
-        }
-    };
+    //     try {
+    //         setIsLoading(true);
+    //         const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+    //         console.log("Email sent successfully!", response);
+    //         setResponse("Email sent successfully!");
+    //         navigate("/thank-you");
+    //     } catch (error) {
+    //         console.error("Email sending error:", error);
+    //         setResponse("Email sending error");
+    //     } finally {
+    //         setIsLoading(false);
+    //     }
+    // };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         validateErrors();
 
         if (Object.keys(errors).length === 0) {
-            sendContactFormEmail(formData);
+            // sendContactFormEmail(formData);
+            alert("Email sent successfully!");
             setFormData({
                 firstName: "",
                 lastName: "",
