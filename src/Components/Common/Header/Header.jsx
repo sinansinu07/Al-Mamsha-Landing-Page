@@ -138,7 +138,7 @@ export default function Header(){
                             {(isMobile) ? <MdCall className="login-icon"/> :
                                 <div className="phone-number">
                                     <MdCall className="login-icon"/>
-                                    +971987654321
+                                    {/* +971987654321 */}
                                 </div>
                             }
                         </div>
@@ -171,22 +171,25 @@ export default function Header(){
                                 )
                             })}
                         </ul>
-                        <div className="side-menu-contact">
+                        {/* <div className="side-menu-contact">
                             <a href="tel:++971987654321" className="btn btn-white-fill" onClick={() => setMobileMenu(false)}>
                                 <MdCall className="contact-icon"/>
                                 +971987654321
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 
             </div>
-            
+        
+            <div  className="contact-us-div"><a href="#contact-us">
+                Contact Us
+            </a></div>
             <div  className="whatsapp-div"><a href="https://wa.me/++971987654321">
                 <img src={whatsapp} alt="WhatsApp" />
             </a></div>
-            <div  className="contact-us-div"><a href="#contact-us">
-                Contact Us
+            <div  className="call-us-div"><a href="tel:+971987654321">
+                <MdCall className="contact-icon"/>
             </a></div>
         </nav>
     )
