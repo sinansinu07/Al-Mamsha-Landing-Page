@@ -5,16 +5,17 @@
     right: 0;
     margin: 0 auto;
     z-index: 1000;
-    width: 100%;
+    width: 70%;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
-    padding: 5px 100px;
+    padding: 5px 50px;
     height: 70px;
     transition: all 0.5s ease;
     background: transparent;
+    margin-right: 30%;
 
     &::before {
         content: "";
@@ -34,7 +35,7 @@
         justify-content: center;
         z-index: 10001;
         overflow: hidden;
-        width: 150px;
+        width: 120px;
         height: 100%;
 
         .logo {
@@ -46,36 +47,42 @@
     }
 
     .nav-links-div {
-        display: none; // Hide desktop navigation completely
-
-        .mobile-menu-header {
-            display: none;
-        }
+        display: flex;
+        flex: 1;
+        justify-content: center;
 
         .menu-bar {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
 
             .menu-items {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                letter-spacing: 1px;
+                letter-spacing: 0.5px;
                 text-decoration: none;
-                font-size: 16px;
+                font-size: 14px;
                 text-transform: uppercase;
                 cursor: pointer;
                 color: white;
-                font-weight: 600;
+                font-weight: 500;
 
                 a {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    font-weight: 600;
+                    font-weight: 500;
+                    text-decoration: none;
+                    color: white;
+                    transition: all 0.3s ease;
+                    padding: 6px 12px;
+                    border-radius: 6px;
                 }
 
                 svg {
@@ -89,6 +96,7 @@
                 color: #B6735D;
                 transition: .5s;
                 font-weight: bold;
+                background: rgba(182, 115, 93, 0.1);
             }
 
             .menu-items:hover svg {
@@ -104,257 +112,13 @@
             a.active {
                 color: #B6735D;
                 transition: .5s;
+                background: rgba(182, 115, 93, 0.1);
             }
         }
-
-        .mobile-menu-footer {
-            display: none;
-        }
     }
 
-    .btn-icon-div {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        // z-index: 1003;
-    }
-
-    .btn-white-div {
-        // width: 170px;
-    }
-
-    .phone-number {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 5px;
-
-        .login-icon {
-            font-size: 15px;
-        }
-    }
-
-    // HamburgerButton component handles its own styling
 }
 
-// Desktop Side Menu Styles
-.desktop-side-menu {
-    position: fixed;
-    top: 0;
-    right: -400px; // Start hidden off-screen
-    width: 400px;
-    height: 100vh;
-    background: #B6735D;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    z-index: 1003;
-    transition: right 0.4s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 40px;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
-
-    &.show {
-        right: 0;
-    }
-
-    // Add backdrop overlay
-    &::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    &.show::before {
-        opacity: 1;
-    }
-
-    .side-menu-content {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-
-        .side-menu-nav {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: center;
-
-            .side-menu-item {
-                a {
-                    color: white;
-                    text-decoration: none;
-                    font-size: 25px;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    transition: all 0.3s ease;
-                    position: relative;
-                    display: block;
-                    padding: 10px 20px;
-
-                    &:hover {
-                        color: #B6735D;
-                        transform: translateX(10px);
-                    }
-
-                    &.active {
-                        color: #B6735D;
-                    }
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        left: 50%;
-                        width: 0;
-                        height: 3px;
-                        background: #B6735D;
-                        transition: all 0.3s ease;
-                        transform: translateX(-50%);
-                    }
-
-                    &:hover::after {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-
-        // .side-menu-contact {
-
-        //     .side-menu-contact-btn {
-        //         display: flex;
-        //         align-items: center;
-        //         gap: 15px;
-        //         background: #B6735D;
-        //         color: white;
-        //         padding: 20px 40px;
-        //         border-radius: 50px;
-        //         text-decoration: none;
-        //         font-size: 18px;
-        //         font-weight: 600;
-        //         text-transform: uppercase;
-        //         letter-spacing: 1px;
-        //         transition: all 0.3s ease;
-        //         box-shadow: 0 4px 15px rgba(37, 159, 186, 0.3);
-
-        //         &:hover {
-        //             background: #1e7a8a;
-        //             transform: translateY(-2px);
-        //             box-shadow: 0 6px 20px rgba(37, 159, 186, 0.4);
-        //         }
-
-        //         .contact-icon {
-        //             font-size: 20px;
-        //         }
-        //     }
-        // }
-    }
-}
-
-.contact-us-div {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    background: #B6735D;
-    color: white;
-    font-weight: 700;
-    padding: 10px 20px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    position: fixed;
-    margin-top: -100px;
-    top: 50%;
-    right: -65px;
-    transform: translateY(-50%);
-    width: 130px;
-    height: 50px;
-    rotate: -90deg;
-}
-
-.whatsapp-div {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    background: #B6735D;
-    padding: 10px 15px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    position: fixed;
-    margin-top: 0px;
-    top: 50%;
-    right: -40px;
-    transform: translateY(-50%);
-    rotate: -90deg;
-
-    img {
-        width: 100%;
-        height: 100%;
-        transition: transform 0.3s ease;
-    }
-
-    &:hover img {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-    }
-}
-
-.call-us-div {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    background: #B6735D;
-    // padding: 10px 15px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    position: fixed;
-    margin-top: 72px;
-    top: 50%;
-    right: -30px;
-    transform: translateY(-50%);
-    rotate: -90deg;
-    height: 55px;
-    width: 50px;
-
-    svg {
-        font-size: 25px;
-        color: white;
-        // width: 100%;
-        // height: 100%;
-        transition: transform 0.3s ease;
-        margin-top: 5px;
-    }
-
-    &:hover img {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-    }
-}
 
 // .navbar.bg-black {
 //     background: black;
@@ -414,23 +178,19 @@
     }
 }
 
-// Responsive adjustments for desktop side menu
+// Responsive adjustments for navigation
 @media (max-width: 1200px) {
-    .desktop-side-menu {
-        width: 350px;
-        right: -350px;
-
-        .side-menu-content {
-            .side-menu-nav {
-                .side-menu-item a {
-                    font-size: 24px;
-                }
-            }
-
-            .side-menu-contact {
-                .side-menu-contact-btn {
-                    font-size: 16px;
-                    padding: 18px 35px;
+    .navbar {
+        .nav-links-div {
+            .menu-bar {
+                gap: 25px;
+                
+                .menu-items {
+                    font-size: 13px;
+                    
+                    a {
+                        padding: 5px 10px;
+                    }
                 }
             }
         }
@@ -441,93 +201,15 @@
     .navbar {
         top: 0;
 
-        // Hide desktop side menu on mobile
-        .desktop-side-menu {
-            display: none;
-        }
-
         .nav-links-div {
-            position: relative;
-            display: block; // Show mobile navigation
-
             .menu-bar {
-                position: fixed;
-                right: -2px;
-                top: 0;
-                bottom: 0;
-                padding-top: 100px;
-                padding-left: 50px;
-                width: 350px;
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                background: black;
-                justify-content: flex-start;
-                align-items: flex-start;
-                transition: 0.5s;
-                z-index: 1001;
-                overflow-y: scroll;
-
+                gap: 20px;
+                
                 .menu-items {
-                    svg {
-                        transform: rotate(90deg);
-
-                        &:hover {
-                            transform: rotate(-0deg);
-                        }
-                    }
-
-                    &:hover svg {
-                            transform: rotate(-0deg);
-                        }
-                }
-            }
-
-            .hide-menu-bar {
-                margin-right: -350px;
-                transition: 0.5s;
-            }
-
-            .mobile-menu-footer {
-                position: absolute;
-                bottom: 10px;
-                left: 50%;
-                transform: translateX(-50%);
-                color: white;
-                display: block;
-                justify-content: center;
-                align-items: center;
-
-                .social-head {
-                    text-align: center;
-                    margin-top: 20px;
-                }
-
-                .social-links {
-                    display: flex;
-                    justify-content: left;
-                    text-align: left;
-                    align-items: center;
-                    padding: 10px 0 10px 0;
-                    margin-left: -15px;
-    
-                    svg {
-                        width: 30px;
-                        height: 30px;
-                        text-align: center;
-                        line-height: 40px;
-                        font-size: 40px;
-                        margin-left: 15px;
-                        cursor: pointer;
-                        z-index: 1;
-                        color: white;
-                        transition: .3s;
-                    }
-
-                    svg:hover {
-                        color: #B6735D;
-                        transform: scale(1.1);
-                        transition: .3s;
+                    font-size: 12px;
+                    
+                    a {
+                        padding: 4px 8px;
                     }
                 }
             }
@@ -550,17 +232,42 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 5px 50px;
+        padding: 5px 30px;
+        width: 100%;
+        margin-right: 0%;
+        
+        .nav-links-div {
+            .menu-bar {
+                gap: 15px;
+                
+                .menu-items {
+                    font-size: 11px;
+                    
+                    a {
+                        padding: 4px 8px;
+                    }
+                }
+            }
+        }
     }
 }
 
 @media (max-width: 600px) {
     .navbar {
-        .btn.btn-white-fill {
-            padding: 0px;
-            height: 40px;
-            width: 50px;
-            transition: all 0.5s ease;
+        padding: 5px 20px;
+        
+        .nav-links-div {
+            .menu-bar {
+                gap: 12px;
+                
+                .menu-items {
+                    font-size: 10px;
+                    
+                    a {
+                        padding: 3px 6px;
+                    }
+                }
+            }
         }
     }
     .whatsapp-div {
@@ -571,28 +278,22 @@
 
 @media (max-width: 550px) {
     .navbar {
+        padding: 5px 15px;
+        
         .logo-div {
             z-index: 10001;
+            width: 120px;
         }
 
         .nav-links-div {
             .menu-bar {
-                // padding-left: 100px;
-
+                gap: 8px;
+                
                 .menu-items {
-                    width: 102%;
-                    // position: relative;
-                    justify-content: space-between;
-                    padding-right: 50px;
-                    align-items: center;
-
-                    svg {
-                        transform: rotate(270deg);
-                        font-size: 20px;
-
-                        &:hover {
-                            transform: rotate(360deg);
-                        }
+                    font-size: 9px;
+                    
+                    a {
+                        padding: 2px 4px;
                     }
                 }
             }
@@ -602,27 +303,23 @@
 
 @media (max-width: 500px) {
     .navbar {
-        padding: 5px 30px;
+        padding: 5px 10px;
 
         .logo-div {
-            width: 120px;
+            width: 100px;
         }
-
-        .btn-white {
-            width: 120px;
-            font-size: 12px;
-        }
-
-        // HamburgerButton handles its own styling
 
         .nav-links-div {
             .menu-bar {
-                width: 101%;
-                // height: 100%;
-            }
-
-            .hide-menu-bar {
-                margin-right: -100%;
+                gap: 6px;
+                
+                .menu-items {
+                    font-size: 8px;
+                    
+                    a {
+                        padding: 1px 3px;
+                    }
+                }
             }
         }
     }

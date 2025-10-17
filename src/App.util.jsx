@@ -11,13 +11,13 @@ export const navs = [
     },
     {
         id: 3,
-        name: "Services",
-        path: "#services"
+        name: "Pricing",
+        path: "#pricing"
     },
     {
         id: 4,
-        name: "Pricing",
-        path: "#pricing"
+        name: "Floor Plan",
+        path: "#floor-plan"
     },
     {
         id: 5,
@@ -26,7 +26,7 @@ export const navs = [
     },
     {
         id: 6,
-        name: "Contact Us",
-        path: "#contact-us"
+        name: "Location",
+        path: "#location"
     },
 ];

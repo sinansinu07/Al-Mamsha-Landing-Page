@@ -1,0 +1,453 @@
+.floorplan-section {
+    background: #f8f9fa;
+
+    .floorplan-header {
+        text-align: center;
+        margin-bottom: 40px;
+
+        .floorplan-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .floorplan-description {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+    }
+
+    .master-plan-section {
+        margin-bottom: 50px;
+
+        .master-plan-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+
+            .master-plan-image-box {
+                position: relative;
+                background: white;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                margin-bottom: 15px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                .master-plan-image {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover .master-plan-image {
+                    transform: scale(1.02);
+                }
+
+                .enlarge-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    background: rgba(182, 115, 93, 0.9);
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 6px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    backdrop-filter: blur(10px);
+
+                    svg {
+                        font-size: 14px;
+                    }
+
+                    &:hover {
+                        background: #B6735D;
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .master-plan-title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #333;
+                margin: 0;
+            }
+        }
+    }
+
+    .floor-plans-section {
+        margin-bottom: 40px;
+
+        .floor-plans-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .floor-plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .floor-plan-item {
+            text-align: center;
+
+            .floor-plan-image-box {
+                position: relative;
+                background: white;
+                border-radius: 12px;
+                padding: 15px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                margin-bottom: 12px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                }
+
+                .floor-plan-image {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover .floor-plan-image {
+                    transform: scale(1.02);
+                }
+
+                .enlarge-btn {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: rgba(182, 115, 93, 0.9);
+                    color: white;
+                    border: none;
+                    padding: 5px;
+                    border-radius: 4px;
+                    font-size: 10px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    backdrop-filter: blur(10px);
+
+                    svg {
+                        font-size: 12px;
+                    }
+
+                    &:hover {
+                        background: #B6735D;
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .floor-plan-name {
+                font-size: 14px;
+                font-weight: 600;
+                color: #333;
+                margin: 0;
+            }
+        }
+    }
+
+    .floorplan-cta {
+        text-align: center;
+
+        .cta-button {
+            background: #B6735D;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            &:hover {
+                background: #9a5f4a;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(182, 115, 93, 0.3);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    // Image Modal Styles
+    .image-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        cursor: pointer;
+
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(1.1);
+            }
+        }
+
+        .image-modal-content {
+            position: relative;
+            max-width: 80vw;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            cursor: default;
+
+            .img-div {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 90vw;
+                max-height: 90vh;
+            }
+
+            .enlarged-image {
+                max-width: 80vw;
+                max-height: 80vh;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                border-radius: 8px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .floorplan-section {
+        .floorplan-header {
+            margin-bottom: 30px;
+
+            .floorplan-title {
+                font-size: 20px;
+            }
+
+            .floorplan-description {
+                font-size: 12px;
+            }
+        }
+
+        .master-plan-section {
+            margin-bottom: 40px;
+
+            .master-plan-container {
+                .master-plan-image-box {
+                    padding: 15px;
+
+                    .master-plan-image {
+                        height: 250px;
+                    }
+
+                    .enlarge-btn {
+                        padding: 6px 10px;
+                        font-size: 10px;
+                    }
+                }
+
+                .master-plan-title {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .floor-plans-section {
+            margin-bottom: 30px;
+
+            .floor-plans-title {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+
+            .floor-plans-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .floor-plan-item {
+                .floor-plan-image-box {
+                    padding: 12px;
+
+                    .floor-plan-image {
+                        height: 180px;
+                    }
+
+                    .enlarge-btn {
+                        padding: 5px 8px;
+                        font-size: 9px;
+                    }
+                }
+
+                .floor-plan-name {
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .floorplan-cta {
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 13px;
+            }
+        }
+
+        // Mobile modal adjustments
+        .image-modal-overlay {
+            .image-modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+
+                .img-div {
+                    max-width: 95vw;
+                    max-height: 85vh;
+                }
+
+                .enlarged-image {
+                    max-width: 95vw;
+                    max-height: 85vh;
+                }
+
+                .close-btn {
+                    top: -45px;
+                    right: -5px;
+                    width: 35px;
+                    height: 35px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .floorplan-section {
+        .master-plan-section {
+            .master-plan-container {
+                .master-plan-image-box {
+                    padding: 12px;
+
+                    .master-plan-image {
+                        height: 200px;
+                    }
+                }
+            }
+        }
+
+        .floor-plans-section {
+            .floor-plans-grid {
+                gap: 12px;
+            }
+
+            .floor-plan-item {
+                .floor-plan-image-box {
+                    padding: 10px;
+
+                    .floor-plan-image {
+                        height: 150px;
+                    }
+                }
+
+                .floor-plan-name {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .floorplan-cta {
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+        }
+
+        // Small mobile modal adjustments
+        .image-modal-overlay {
+            .image-modal-content {
+                max-width: 98vw;
+                max-height: 90vh;
+
+                .img-div {
+                    max-width: 98vw;
+                    max-height: 90vh;
+                }
+
+                .enlarged-image {
+                    max-width: 98vw;
+                    max-height: 90vh;
+                }
+
+                .close-btn {
+                    top: -40px;
+                    right: 0;
+                    width: 30px;
+                    height: 30px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

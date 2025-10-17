@@ -173,16 +173,6 @@ export default function Gallery() {
 
                 {/* Project Content */}
                 <div className="project-content">
-                    <div className="project-header">
-                        <h4 className="project-name">{galleryData[activeProject].name}</h4>
-                        <p className="project-description">
-                            {activeProject === 'hamsa' 
-                                ? 'Premium residential development with modern amenities'
-                                : 'Innovative mixed-use development with retail and entertainment'
-                            }
-                        </p>
-                    </div>
-
                     {/* Category Tabs */}
                     <div className="category-tabs">
                         <button 
