@@ -9,11 +9,14 @@ import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 import './App.scss';
 import PopupForm from './Components/Common/PopupForm/PopupForm';
+import Header2 from './Components/Common/Header2/Header2';
+import Footer2 from './Components/Common/Footer2/Footer2';
 
 export default function App() {
   const [closePopup, setClosePopup] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const location = useLocation();
+  const isFullWidthRoute = location.pathname === '/thank-you' || location.pathname !== '/';
 
   // Function to handle closing the popup - prevent future appearances
   const handleClose = () => {
@@ -41,21 +44,25 @@ export default function App() {
 
   return (
       <div className="app-container">
-        <div className="app-content">
-          <Header />
-            <Routes>
-              <Route path="/" element={<HomePage openPopup={openPopup} />} />
-              <Route path="/thank-you" element={<Thankyou />} />
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          <Footer />
+        <div className={`app-content${isFullWidthRoute ? ' full' : ''}`}>
+          {location.pathname === '/' ? <Header /> : <Header2 />}
+            <div className="app-main">
+              <Routes>
+                <Route path="/" element={<HomePage openPopup={openPopup} />} />
+                <Route path="/thank-you" element={<Thankyou />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </div>
+          {location.pathname === '/' ? <Footer /> : <Footer2 />}
         </div>
-        <div className="app-popup">
-          <ContactForm handleClose={handleClose} handleSubmit={handleSubmit}/>
-        </div>
-          {(!closePopup || showPopup) && location.pathname !== '/thank-you' &&
+        {!isFullWidthRoute && (
+          <div className="app-popup">
+            <ContactForm handleClose={handleClose} handleSubmit={handleSubmit}/>
+          </div>
+        )}
+          {(!closePopup || showPopup) && !isFullWidthRoute && (
             <PopupForm handleClose={handleClose} handleSubmit={handleSubmit}/>
-          }
+          )}
       </div>
     );
 }

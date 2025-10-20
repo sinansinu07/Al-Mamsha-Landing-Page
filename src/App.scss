@@ -12,6 +12,17 @@
   // height: 100vh;
   position: relative;
   // z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content.full {
+  width: 100%;
+}
+
+.app-main {
+  flex: 1 0 auto;
 }
 
 .app-popup {

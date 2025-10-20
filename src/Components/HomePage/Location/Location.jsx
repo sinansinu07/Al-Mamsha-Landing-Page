@@ -94,7 +94,7 @@ export default function Location({ openPopup }) {
 
                 <div className="btn-container">
                     <button className="btn btn-primary-fill" onClick={openPopup}>
-                        No More About Location
+                        Know More About Location
                     </button>
                 </div>
 

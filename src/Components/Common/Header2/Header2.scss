@@ -1,4 +1,4 @@
-.navbar {
+.navbar2 {
     position: fixed;
     top: 0; /* Always stays at 15px */
     left: 0;
@@ -24,7 +24,7 @@
         left: 0;
         right: 0;
         height: 15px;
-        background: transparent; /* or same bg as .navbar.bg-black if needed */
+        background: transparent; /* or same bg as .navbar2.bg-black if needed */
         transition: background 0.5s ease;
   }
 
@@ -119,13 +119,13 @@
 
 }
 
-.navbar.full {
+.navbar2.full {
     width: 100%;
     margin-right: 0;
 }
 
 
-// .navbar.bg-black {
+// .navbar2.bg-black {
 //     background: black;
 //     // top: 0;
 //     padding-top: 18px;  /* simulate top spacing visually */
@@ -133,7 +133,7 @@
 //     transition: all 0.5s ease;
 // }
 
-.navbar.bg-black {
+.navbar2.bg-black {
   background: black;
 
   &::before {
@@ -141,7 +141,7 @@
   }
 }
 
-.navbar.sticky {
+.navbar2.sticky {
     background: black;
 
     &::before {
@@ -170,7 +170,7 @@
     // }
 }
 
-.navbar.thank-you-header {
+.navbar2.thank-you-header {
     .nav-links-div {
         display: none;
     }
@@ -185,7 +185,7 @@
 
 // Responsive adjustments for navigation
 @media (max-width: 1200px) {
-    .navbar {
+    .navbar2 {
         .nav-links-div {
             .menu-bar {
                 gap: 25px;
@@ -203,7 +203,7 @@
 }
 
 @media (max-width: 1120px) {
-    .navbar {
+    .navbar2 {
         top: 0;
 
         .nav-links-div {
@@ -221,7 +221,7 @@
         }
     }
 
-    .navbar.sticky {
+    .navbar2.sticky {
         // width: 100%;
         border-radius: 0px;
         top: 0;
@@ -229,14 +229,14 @@
 
     }
 
-    .navbar-container {
+    .navbar2-container {
         padding-left: 50px;
         padding-right: 50px;
     }
 }
 
 @media (max-width: 768px) {
-    .navbar {
+    .navbar2 {
         padding: 5px 30px;
         width: 100%;
         margin-right: 0%;
@@ -258,7 +258,7 @@
 }
 
 @media (max-width: 600px) {
-    .navbar {
+    .navbar2 {
         padding: 5px 20px;
         
         .nav-links-div {
@@ -282,7 +282,7 @@
 }
 
 @media (max-width: 550px) {
-    .navbar {
+    .navbar2 {
         padding: 5px 15px;
         
         .logo-div {
@@ -307,7 +307,7 @@
 }
 
 @media (max-width: 500px) {
-    .navbar {
+    .navbar2 {
         padding: 5px 10px;
 
         .logo-div {

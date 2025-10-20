@@ -1,0 +1,233 @@
+.footer2 {
+    bottom: 0;
+    position: relative;
+    overflow: hidden;
+    bottom: unset;
+    // padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: black;
+    color: white;
+
+    @media (max-width: 1310px) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media (max-width: 768px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .bottom_footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        // border-top: 1px solid #333;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .left_section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            p {
+                font-size: 10px;
+                color: #ccc;
+                margin: 0;
+                cursor: pointer;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #B6735D;
+                }
+            }
+
+            .separator {
+                color: #666;
+                font-size: 10px;
+            }
+        }
+
+        .right_section {
+            p {
+                font-size: 10px;
+                color: #ccc;
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+    .footer {
+        .footer_row {
+            .footer_col {
+                &.logo_col {
+                    .company_logo {
+                        width: 100px;
+                    }
+
+                    .description {
+                        font-size: 11px;
+                    }
+                }
+
+                .footer_heading {
+                    font-size: 13px;
+                }
+
+                .footer_links {
+                    li {
+                        a, &:not(:has(a)) {
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .disclaimer_section {
+            .disclaimer_title {
+                font-size: 13px;
+            }
+
+            .disclaimer_text {
+                font-size: 9px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        .footer_row {
+            .footer_col {
+                &.logo_col {
+                    .company_logo {
+                        width: 80px;
+                    }
+
+                    .description {
+                        font-size: 10px;
+                    }
+                }
+
+                .footer_heading {
+                    font-size: 12px;
+                }
+
+                .footer_links {
+                    li {
+                        margin-bottom: 6px;
+
+                        a, &:not(:has(a)) {
+                            font-size: 9px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .disclaimer_section {
+            padding: 15px;
+
+            .disclaimer_title {
+                font-size: 12px;
+            }
+
+            .disclaimer_text {
+                font-size: 8px;
+            }
+        }
+
+        .bottom_footer {
+            .left_section {
+                p {
+                    font-size: 9px;
+                }
+
+                .separator {
+                    font-size: 9px;
+                }
+            }
+
+            .right_section {
+                p {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .footer_row {
+            .footer_col {
+                &.logo_col {
+                    .company_logo {
+                        width: 70px;
+                    }
+
+                    .description {
+                        font-size: 9px;
+                    }
+                }
+
+                .footer_heading {
+                    font-size: 11px;
+                }
+
+                .footer_links {
+                    li {
+                        a, &:not(:has(a)) {
+                            font-size: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .disclaimer_section {
+            padding: 12px;
+
+            .disclaimer_title {
+                font-size: 11px;
+            }
+
+            .disclaimer_text {
+                font-size: 7px;
+            }
+        }
+
+        .bottom_footer {
+            .left_section {
+                p {
+                    font-size: 8px;
+                }
+
+                .separator {
+                    font-size: 8px;
+                }
+            }
+
+            .right_section {
+                p {
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+}

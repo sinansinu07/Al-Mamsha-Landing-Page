@@ -1,4 +1,4 @@
-import notFound from "../../Assets/Common/error-page.svg"
+import notFound from "../../Assets/Icons/not-found.svg"
 
 import "./PageNotFound.css"
 
@@ -12,7 +12,7 @@ export default function PageNotFound() {
                 looking for. Let’s find a better place for you to go.
                 <div>
                     <a href="/">
-                        <button className="btn-black">Back To Home
+                        <button className="btn btn-black">Back To Home
                             <span className="line">
                                 <span className="circle"></span>
                             </span>

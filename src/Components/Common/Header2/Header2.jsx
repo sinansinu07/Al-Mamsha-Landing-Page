@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import "./Header.scss"
+import "./Header2.scss"
 
 import logo from "../../../Assets/Logo/Al-Mamsha-logo-final.png"
 
 import { useLocation } from 'react-router-dom'
 import { navs } from '../../../App.util'
-export default function Header(){
+export default function Header2(){
     const location = useLocation()
     const [ isSticky, setIsSticky ] = useState(false)
     const [ activeSection, setActiveSection ] = useState("")
@@ -68,37 +68,13 @@ export default function Header(){
 
 
     return (
-        <nav className='navbar-container'>
-            <div className={`navbar ${isSticky ? "sticky" : ""} ${location.pathname === "/thank-you" ? "thank-you-header" : ""} ${isFullWidthRoute ? "full" : ""}`}>
+        <nav className='navbar-container-2'>
+            <div className={`navbar2 ${isSticky ? "sticky" : ""} ${location.pathname === "/thank-you" ? "thank-you-header" : ""} ${isFullWidthRoute ? "full" : ""}`}>
                 <div className="logo-div">
                     <a href="/"><img src={!isSticky ? logo : logo} alt="Logo" className="logo"/></a>
                 </div>
-                <div className="nav-links-div">
-                    <ul className="menu-bar">
-                        {navs.map((ele) => {
-                            // Determine if this nav item should be active
-                            const isActive = () => {
-                                if (ele.path === "/") {
-                                    return location.pathname === "/" && activeSection === "";
-                                } else if (ele.path.startsWith("#")) {
-                                    const sectionId = ele.path.substring(1); // Remove the # symbol
-                                    return activeSection === sectionId;
-                                }
-                                return location.pathname === ele.path;
-                            };
-
-                            return (
-                                <li
-                                    className="menu-items"
-                                    key={ele.id}
-                                    >
-                                        <a href={ele.path} className={isActive() ? "active" : ""}>
-                                            {ele.name}
-                                        </a>
-                                </li>
-                            )
-                        })}
-                    </ul>
+                <div className="btn-div">
+                    <button className="btn btn-white">Contact Us</button>
                 </div>
             </div>
         </nav>
