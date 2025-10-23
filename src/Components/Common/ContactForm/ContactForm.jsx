@@ -9,8 +9,15 @@ import PhoneInput from "react-phone-input-2"
 import "react-phone-input-2/lib/style.css";
 import whatsapp from "../../../Assets/Common/whatsapp.svg"
 import { MdCall } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-function ContactForm({ handleClose }) {
+const PUBLIC_KEY = "PKoR53EHJAUqG_BLQ";
+const SERVICE_ID = "service_g654l6k";
+const TEMPLATE_ID = "template_lpssnjq";
+
+function ContactForm({ handleSubmit, openPopup }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
       name: '',
       phone: '',
@@ -20,6 +27,8 @@ function ContactForm({ handleClose }) {
   });
 
   const [formErrors, setFormErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [response, setResponse] = useState("");
 
   const errors = {};
 
@@ -36,34 +45,34 @@ function ContactForm({ handleClose }) {
       setFormData((prev) => ({ ...prev, [field]: inputValue }));
   };
 
-  // const sendContactFormEmail = async (formData) => {
-  //     const templateParams = {
-  //         name: formData.name,
-  //         phone: formData.phone,
-  //         email: formData.email,
-  //         message: formData.message,
-  //         time: new Date().toLocaleString(),
-  //         // service: formData.service,
-  //     };
+  const sendContactFormEmail = async (formData) => {
+      const templateParams = {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+          // service: formData.service,
+      };
 
-  //     try {
-  //         setIsLoading(true);
-  //         const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-  //         console.log("Email sent successfully!", response);
-  //         setResponse("Email sent successfully!");
+      try {
+          setIsLoading(true);
+          const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+          console.log("Email sent successfully!", response);
+          setResponse("Email sent successfully!");
           
-  //         // Close the popup and redirect after successful email sending
-  //         if (handleSubmit) {
-  //             handleSubmit();
-  //         }
-  //         navigate("/thank-you");
-  //     } catch (error) {
-  //         console.error("Email sending error:", error);
-  //         setResponse("Email sending error");
-  //     } finally {
-  //         setIsLoading(false);
-  //     }
-  // };
+          // Close the popup and redirect after successful email sending
+          if (handleSubmit) {
+              handleSubmit();
+          }
+          navigate("/thank-you");
+      } catch (error) {
+          console.error("Email sending error:", error);
+          setResponse("Email sending error");
+      } finally {
+          setIsLoading(false);
+      }
+  };
 
   const handleFormSubmit = (e) => {
       e.preventDefault();
@@ -71,7 +80,7 @@ function ContactForm({ handleClose }) {
 
       if (Object.keys(errors).length === 0) {
           // sendContactFormEmail(formData);
-          alert("Email sent successfully!");
+          toast.success("Email sent successfully!");
           setFormData({
               name: "",
               phone: "",
@@ -90,15 +99,15 @@ function ContactForm({ handleClose }) {
     <AnimatePresence>
     <div className="contact-form-overlay">
       <div className="header-contact-div">
-        <div  className="contact-us-div"><a href="#contact-us">
+        <div className="contact-us-div" onClick={openPopup}>
             Contact Us
-        </a></div>
-        <div  className="whatsapp-div"><a href="https://wa.me/++971987654321">
+        </div>
+        <a href="https://wa.me/+971585100593"><div  className="whatsapp-div">
             <img src={whatsapp} alt="WhatsApp" />
-        </a></div>
-        <div  className="call-us-div"><a href="tel:+971987654321">
+        </div></a>  
+        <a href="tel:+971545118288"><div  className="call-us-div">
             <MdCall className="contact-icon"/>
-        </a></div>
+        </div></a>
       </div>
       <div className="contact-form-content">
         <div className="right">
@@ -175,9 +184,10 @@ function ContactForm({ handleClose }) {
               <TextField label="Message" variant="outlined" multiline rows={4} value={formData.message} onChange={handleUpdate('message')} fullWidth className="form-field" required />
               {formErrors.message && <div className="error-message">{formErrors.message}</div>}
 
-              <button type="submit" className="btn-white">
-                Get Exclusive Al Mamsha Offer
+              <button type="submit" className="btn-white" disabled={isLoading}>
+                {isLoading ? 'Sending...' : 'Get Exclusive Al Mamsha Offer'}
               </button>
+              {response && <span className="form-response">{response}</span>}
             </form>
           {/* </div> */}
         </div>

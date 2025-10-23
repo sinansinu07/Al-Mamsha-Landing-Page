@@ -73,7 +73,7 @@
     }
 
     .top-title {
-      font-size: 25px;
+      font-size: 30px;
       margin-top: 5px;
       font-weight: 700;
       text-transform: uppercase;
@@ -82,7 +82,7 @@
     }
 
     .sub-title {
-      font-size: 14px;
+      font-size: 22px;
       font-weight: 600;
       text-transform: uppercase;
       margin-top: 3px;
@@ -91,36 +91,14 @@
     }
 
     .developer {
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 600;
       margin-top: 3px;
       color: #B6735D;
     }
 
-    .property-type {
-      font-size: 18px;
-      font-weight: 600;
-      margin-top: 8px;
-      color: #B6735D;
-      text-transform: uppercase;
-    }
-
-    .property-details {
-      font-size: 16px;
-      font-weight: 500;
-      margin-top: 6px;
-      color: white;
-    }
-
-    .payment-info {
-      font-size: 16px;
-      font-weight: 500;
-      margin-top: 6px;
-      color: white;
-    }
-
     .title {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 500;
       text-transform: uppercase;
       margin-top: 8px;
@@ -169,13 +147,13 @@
           
           .highlight-text {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 16px;
           }
         }
       
       .highlight-text {
         color: white;
-        font-size: 10px;
+        font-size: 14px;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 0.2px;
@@ -185,113 +163,7 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .home-hero {        
-    .hero-content {
-      gap: 50px;
-      
-      .content-container {
-        padding: 12px;
-        max-width: 450px;
-      }
-      
-      .highlight-item {
-        padding: 3px 6px;
-        
-        .highlight-text {
-          font-size: 9px;
-        }
-        
-        &.main-highlight .highlight-text {
-          font-size: 11px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 1000px) {
-  .home-hero {
-    .hero-content {
-      padding: 0 30px;
-      
-      .content-container {
-        padding: 10px;
-        max-width: 400px;
-      }
-      
-      .highlight-item {
-        padding: 2px 4px;
-        
-        .highlight-text {
-          font-size: 8px;
-        }
-        
-        &.main-highlight .highlight-text {
-          font-size: 10px;
-        }
-      }
-    }   
-  }
-}
-
-@media (max-width: 900px) {
-  .home-hero {
-    .hero-content {
-      flex-direction: column;
-      gap: 40px;
-
-      .content-container {
-        padding: 8px;
-        max-width: 350px;
-      }
-
-      .left-div {
-        width: 100%;
-        align-items: center;
-        text-align: center;
-      }
-
-      .top-title {
-        font-size: 20px;
-      }
-
-      .sub-title {
-        font-size: 16px;
-      }
-
-      .developer {
-        font-size: 14px;
-      }
-
-      .title {
-        font-size: 24px;
-      }
-
-      .price {
-        font-size: 16px;
-      }
-
-      .highlight-item {
-        padding: 2px 4px;
-        
-        .highlight-text {
-          font-size: 7px;
-        }
-        
-        &.main-highlight .highlight-text {
-          font-size: 9px;
-        }
-      }
-
-      .contact-form {
-        display: none;
-      }
-    }   
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .home-hero {
     .hero-content {
       
@@ -305,71 +177,24 @@
 
 @media (max-width: 600px) {
   .home-hero {
-    
     .hero-content {
-      padding: 0 20px;
-      gap: 30px;
+      padding: 30px;
 
       .content-container {
-        padding: 6px;
-        max-width: 300px;
+        padding: 20px;
+        // max-width: 280px;
       }
 
       .top-title {
-        font-size: 18px;
+        font-size: 25px;
       }
 
       .sub-title {
-        font-size: 14px;
-      }
-
-      .developer {
-        font-size: 12px;
-      }
-
-      .title {
         font-size: 20px;
       }
 
-      .price {
-        font-size: 14px;
-      }
-
-      .highlight-item {
-        padding: 1px 3px;
-        
-        .highlight-text {
-          font-size: 6px;
-        }
-        
-        &.main-highlight .highlight-text {
-          font-size: 8px;
-        }
-      }
-    }   
-  }
-}
-
-@media (max-width: 500px) {
-  .home-hero {
-    .hero-content {
-      padding: 0 15px;
-
-      .content-container {
-        padding: 5px;
-        max-width: 280px;
-      }
-
-      .top-title {
-        font-size: 16px;
-      }
-
-      .sub-title {
-        font-size: 14px;
-      }
-
       .developer {
-        font-size: 12px;
+        font-size: 18px;
       }
 
       .title {
@@ -377,18 +202,18 @@
       }
 
       .price {
-        font-size: 14px;
+        font-size: 20px;
       }
 
       .highlight-item {
-        padding: 1px 2px;
+        padding: 3px 5px;
         
         .highlight-text {
-          font-size: 5px;
+          font-size: 14px;
         }
         
         &.main-highlight .highlight-text {
-          font-size: 7px;
+          font-size: 14px;
         }
       }
       
@@ -404,25 +229,26 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 400px) {
   .home-hero {
     .hero-content {
+      padding: 20px;
+
       .content-container {
-        padding: 4px;
-        max-width: 250px;
+        padding: 18px;
+        // max-width: 280px;
       }
 
       .top-title {
-        font-size: 14px;
-        max-width: 250px;
+        font-size: 22px;
       }
 
       .sub-title {
-        font-size: 12px;
+        font-size: 18px;
       }
 
       .developer {
-        font-size: 10px;
+        font-size: 16px;
       }
 
       .title {
@@ -430,20 +256,29 @@
       }
 
       .price {
-        font-size: 12px;
+        font-size: 18px;
       }
 
       .highlight-item {
-        padding: 1px 2px;
+        padding: 3px 5px;
         
         .highlight-text {
-          font-size: 4px;
+          font-size: 13px;
         }
         
         &.main-highlight .highlight-text {
-          font-size: 6px;
+          font-size: 13px;
         }
       }
-    }   
+      
+      .contact-form {
+        padding: 25px 20px;
+        gap: 10px;
+
+        .form-description {
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 }

@@ -36,6 +36,7 @@
                 margin-bottom: 15px;
                 cursor: pointer;
                 transition: all 0.3s ease;
+                overflow: hidden;
 
                 &:hover {
                     transform: translateY(-2px);
@@ -46,12 +47,95 @@
                     width: 100%;
                     height: 300px;
                     object-fit: cover;
-                    border-radius: 8px;
-                    transition: transform 0.3s ease;
+                    border-radius: 10px;
+                    transition: transform 0.3s ease, filter 0.3s ease;
+                    filter: blur(2px);
                 }
 
                 &:hover .master-plan-image {
                     transform: scale(1.02);
+                    filter: blur(0px);
+                }
+
+                // Hover Overlay
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    border-radius: 8px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 1;
+                    border-radius: 10px;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                }
+
+                // Hover Buttons
+                .hover-button {
+                    position: absolute;
+                    bottom: 60px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(100%);
+                    background: #B6735D;
+                    color: white;
+                    border: none;
+                    padding: 12px 24px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    z-index: 2;
+                    opacity: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+
+                    &:hover {
+                        background: #9a5f4a;
+                        transform: translateX(-50%) translateY(60px) scale(1.05);
+                    }
+                }
+
+                .plan-details-hover-btn {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(100%);
+                    background: #2c3e50;
+                    color: white;
+                    border: none;
+                    padding: 12px 24px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    z-index: 2;
+                    opacity: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+
+                    &:hover {
+                        background: #34495e;
+                        transform: translateX(-50%) translateY(20px) scale(1.05);
+                    }
+                }
+
+                &:hover .hover-button {
+                    transform: translateX(-50%) translateY(-20px);
+                    opacity: 1;
+                }
+
+                &:hover .plan-details-hover-btn {
+                    transform: translateX(-50%) translateY(-10px);
+                    opacity: 1;
                 }
 
                 .enlarge-btn {
@@ -71,6 +155,7 @@
                     cursor: pointer;
                     transition: all 0.3s ease;
                     backdrop-filter: blur(10px);
+                    z-index: 3;
 
                     svg {
                         font-size: 14px;
@@ -82,6 +167,7 @@
                     }
                 }
             }
+
 
             .master-plan-title {
                 font-size: 18px;
@@ -123,6 +209,7 @@
                 margin-bottom: 12px;
                 cursor: pointer;
                 transition: all 0.3s ease;
+                overflow: hidden;
 
                 &:hover {
                     transform: translateY(-2px);
@@ -133,12 +220,94 @@
                     width: 100%;
                     height: 200px;
                     object-fit: cover;
-                    border-radius: 8px;
-                    transition: transform 0.3s ease;
+                    border-radius: 10px;
+                    transition: transform 0.3s ease, filter 0.3s ease;
+                    filter: blur(2px);
                 }
 
                 &:hover .floor-plan-image {
                     transform: scale(1.02);
+                    filter: blur(0px);
+                }
+
+                // Hover Overlay
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    border-radius: 10px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 1;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                }
+
+                // Hover Buttons
+                .hover-button {
+                    position: absolute;
+                    bottom: 50px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(100%);
+                    background: #B6735D;
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 6px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    z-index: 2;
+                    opacity: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+
+                    &:hover {
+                        background: #9a5f4a;
+                        transform: translateX(-50%) translateY(50px) scale(1.05);
+                    }
+                }
+
+                .plan-details-hover-btn {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(100%);
+                    background: #2c3e50;
+                    color: white;
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 6px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    z-index: 2;
+                    opacity: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+
+                    &:hover {
+                        background: #34495e;
+                        transform: translateX(-50%) translateY(20px) scale(1.05);
+                    }
+                }
+
+                &:hover .hover-button {
+                    transform: translateX(-50%) translateY(-20px);
+                    opacity: 1;
+                }
+
+                &:hover .plan-details-hover-btn {
+                    transform: translateX(-50%) translateY(-10px);
+                    opacity: 1;
                 }
 
                 .enlarge-btn {
@@ -158,6 +327,7 @@
                     cursor: pointer;
                     transition: all 0.3s ease;
                     backdrop-filter: blur(10px);
+                    z-index: 3;
 
                     svg {
                         font-size: 12px;
@@ -303,6 +473,18 @@
                         height: 250px;
                     }
 
+                    .hover-button {
+                        padding: 10px 20px;
+                        font-size: 12px;
+                        bottom: 50px;
+                    }
+
+                    .plan-details-hover-btn {
+                        padding: 10px 20px;
+                        font-size: 12px;
+                        bottom: 15px;
+                    }
+
                     .enlarge-btn {
                         padding: 6px 10px;
                         font-size: 10px;
@@ -334,6 +516,18 @@
 
                     .floor-plan-image {
                         height: 180px;
+                    }
+
+                    .hover-button {
+                        padding: 6px 12px;
+                        font-size: 10px;
+                        bottom: 40px;
+                    }
+
+                    .plan-details-hover-btn {
+                        padding: 6px 12px;
+                        font-size: 10px;
+                        bottom: 15px;
                     }
 
                     .enlarge-btn {
@@ -393,6 +587,18 @@
                     .master-plan-image {
                         height: 200px;
                     }
+
+                    .hover-button {
+                        padding: 8px 16px;
+                        font-size: 11px;
+                        bottom: 40px;
+                    }
+
+                    .plan-details-hover-btn {
+                        padding: 8px 16px;
+                        font-size: 11px;
+                        bottom: 12px;
+                    }
                 }
             }
         }
@@ -408,6 +614,18 @@
 
                     .floor-plan-image {
                         height: 150px;
+                    }
+
+                    .hover-button {
+                        padding: 5px 10px;
+                        font-size: 9px;
+                        bottom: 30px;
+                    }
+
+                    .plan-details-hover-btn {
+                        padding: 5px 10px;
+                        font-size: 9px;
+                        bottom: 12px;
                     }
                 }
 

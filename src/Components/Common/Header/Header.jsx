@@ -9,6 +9,7 @@ export default function Header(){
     const location = useLocation()
     const [ isSticky, setIsSticky ] = useState(false)
     const [ activeSection, setActiveSection ] = useState("")
+    const [ isMobileMenuOpen, setIsMobileMenuOpen ] = useState(false)
     const isFullWidthRoute = location.pathname === '/thank-you' || location.pathname !== '/'
 
     useEffect(() => {
@@ -69,7 +70,7 @@ export default function Header(){
 
     return (
         <nav className='navbar-container'>
-            <div className={`navbar ${isSticky ? "sticky" : ""} ${location.pathname === "/thank-you" ? "thank-you-header" : ""} ${isFullWidthRoute ? "full" : ""}`}>
+            <div className={`navbar ${isSticky ? "sticky" : ""} ${isMobileMenuOpen ? "sticky" : ""} ${location.pathname === "/thank-you" ? "thank-you-header" : ""} ${isFullWidthRoute ? "full" : ""}`}>
                 <div className="logo-div">
                     <a href="/"><img src={!isSticky ? logo : logo} alt="Logo" className="logo"/></a>
                 </div>
@@ -100,6 +101,39 @@ export default function Header(){
                         })}
                     </ul>
                 </div>
+                <div className="mobile-menu-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            {/* Mobile Menu */}
+            <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+                <ul className="mobile-menu-list">
+                    {navs.map((ele) => {
+                        const isActive = () => {
+                            if (ele.path === "/") {
+                                return location.pathname === "/" && activeSection === "";
+                            } else if (ele.path.startsWith("#")) {
+                                const sectionId = ele.path.substring(1);
+                                return activeSection === sectionId;
+                            }
+                            return location.pathname === ele.path;
+                        };
+
+                        return (
+                            <li
+                                className="mobile-menu-item"
+                                key={ele.id}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                <a href={ele.path} className={isActive() ? "active" : ""}>
+                                    {ele.name}
+                                </a>
+                            </li>
+                        )
+                    })}
+                </ul>
             </div>
         </nav>
     )

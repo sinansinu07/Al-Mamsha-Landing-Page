@@ -55,7 +55,7 @@ export default function App() {
             </div>
           {location.pathname === '/' ? <Footer /> : <Footer2 />}
         </div>
-        {!isFullWidthRoute && (
+        {!isFullWidthRoute && !showPopup && (
           <div className="app-popup">
             <ContactForm handleClose={handleClose} handleSubmit={handleSubmit}/>
           </div>

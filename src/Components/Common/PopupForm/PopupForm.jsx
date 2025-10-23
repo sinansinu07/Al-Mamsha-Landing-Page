@@ -8,6 +8,7 @@ import { IoClose } from 'react-icons/io5';
 import { TextField } from '@mui/material';
 import PhoneInput from "react-phone-input-2"
 import "react-phone-input-2/lib/style.css";
+import { toast } from 'react-toastify';
 const PUBLIC_KEY = "PKoR53EHJAUqG_BLQ";
 const SERVICE_ID = "service_g654l6k";
 const TEMPLATE_ID = "template_lpssnjq";
@@ -43,34 +44,34 @@ function PopupForm({ handleClose, handleSubmit }) {
       setFormData((prev) => ({ ...prev, [field]: inputValue }));
   };
 
-  // const sendContactFormEmail = async (formData) => {
-  //     const templateParams = {
-  //         name: formData.name,
-  //         phone: formData.phone,
-  //         email: formData.email,
-  //         message: formData.message,
-  //         time: new Date().toLocaleString(),
-  //         // service: formData.service,
-  //     };
+  const sendContactFormEmail = async (formData) => {
+      const templateParams = {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+          // service: formData.service,
+      };
 
-  //     try {
-  //         setIsLoading(true);
-  //         const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-  //         console.log("Email sent successfully!", response);
-  //         setResponse("Email sent successfully!");
+      try {
+          setIsLoading(true);
+          const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+          console.log("Email sent successfully!", response);
+          setResponse("Email sent successfully!");
           
-  //         // Close the popup and redirect after successful email sending
-  //         if (handleSubmit) {
-  //             handleSubmit();
-  //         }
-  //         navigate("/thank-you");
-  //     } catch (error) {
-  //         console.error("Email sending error:", error);
-  //         setResponse("Email sending error");
-  //     } finally {
-  //         setIsLoading(false);
-  //     }
-  // };
+          // Close the popup and redirect after successful email sending
+          if (handleSubmit) {
+              handleSubmit();
+          }
+          navigate("/thank-you");
+      } catch (error) {
+          console.error("Email sending error:", error);
+          setResponse("Email sending error");
+      } finally {
+          setIsLoading(false);
+      }
+  };
 
   const handleFormSubmit = (e) => {
       e.preventDefault();
@@ -78,7 +79,7 @@ function PopupForm({ handleClose, handleSubmit }) {
 
       if (Object.keys(errors).length === 0) {
           // sendContactFormEmail(formData);
-          alert("Email sent successfully!");
+          toast("Email sent successfully!");
           setFormData({
               name: "",
               phone: "",

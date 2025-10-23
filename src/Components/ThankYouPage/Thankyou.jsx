@@ -4,14 +4,14 @@ import { FaHandshake } from "react-icons/fa";
 
 
 import Helmet from "../../General/Helmet";
-import { initThankYouPageScripts } from "../../Utils/scripts";
+// import { initThankYouPageScripts } from "../../Utils/scripts";
 
 export default function Thankyou() {    
     // On Thank You Page
-    useEffect(() => {
-        const cleanup = initThankYouPageScripts();
-        return cleanup;
-    }, []);
+    // useEffect(() => {
+    //     const cleanup = initThankYouPageScripts();
+    //     return cleanup;
+    // }, []);
 
     return (
         <>

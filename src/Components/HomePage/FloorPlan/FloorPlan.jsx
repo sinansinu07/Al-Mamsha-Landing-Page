@@ -46,6 +46,10 @@ export default function FloorPlan({ openPopup }) {
         setEnlargedImage(null);
     };
 
+    const handleGetPlanDetails = () => {
+        openPopup();
+    };
+
     return (
         <section id="floor-plan">
             <div className="floorplan-section section-container">
@@ -66,6 +70,18 @@ export default function FloorPlan({ openPopup }) {
                                 className="master-plan-image"
                                 onClick={() => handleImageClick(masterPlan.image, masterPlan.alt)}
                             />
+                            <button 
+                                className="hover-button"
+                                onClick={() => handleImageClick(masterPlan.image, masterPlan.alt)}
+                            >
+                                View Master Plan
+                            </button>
+                            <button 
+                                className="plan-details-hover-btn"
+                                onClick={handleGetPlanDetails}
+                            >
+                                Get Full Plan Details
+                            </button>
                             <button 
                                 className="enlarge-btn"
                                 onClick={() => handleImageClick(masterPlan.image, masterPlan.alt)}
@@ -90,6 +106,18 @@ export default function FloorPlan({ openPopup }) {
                                         className="floor-plan-image"
                                         onClick={() => handleImageClick(plan.image, plan.alt)}
                                     />
+                                    {/* <button 
+                                        className="hover-button"
+                                        onClick={() => handleImageClick(plan.image, plan.alt)}
+                                    >
+                                        View Floor Plan
+                                    </button> */}
+                                    <button 
+                                        className="plan-details-hover-btn"
+                                        onClick={handleGetPlanDetails}
+                                    >
+                                        Get Details
+                                    </button>
                                     <button 
                                         className="enlarge-btn"
                                         onClick={() => handleImageClick(plan.image, plan.alt)}
